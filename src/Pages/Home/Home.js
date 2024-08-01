@@ -1,11 +1,11 @@
 import React from "react";
-import Services from "../Services/Services";
-import Blog from "../Blog/Blog";
-import Awards from "../Awards/Awards";
-import Pricing from "../Pricing/Pricing";
-import Featured from "../Featured/Featured";
-import Locations from "../Locations/Locations";
-import test from "../../Images/home.png";
+import Services from "../WhatIsEvent/WhatIsEvent";
+import Blog from "../DigitalTransformation/DigitalTransformation";
+import CoOperation from "../CoOperation/CoOperation";
+import WhyThisEvent from "../WhyThisEvent/WhyThisEvent";
+import SponserMinister from "../SponserMinister/SponserMinister";
+import Creativity from "../Creativity/Creativity";
+import Sponser from "../Sponser/Sponser";
 import "./Home.css";
 
 const Home = () => {
@@ -19,29 +19,14 @@ const Home = () => {
           className="homeSec relative flex flex-col justify-center"
           data-aos="fade-top"
           data-aos-delay="700"
-        >
-          {/* <img src={test} className="home-image" alt="home-image" /> */}
-          {/* <div
-            className=" rounded-md p-2 w-32 btn lg:block md:block hidden"
-            style={{ backgroundhColor: "#44ADD2" }}
-            onClick={() => {}}
-          >
-            <p className=" text-white font-bold">العربية</p>
-          </div>
-          <div
-            className=" rounded-md p-2 w-32 btn lg:block md:block hidden"
-            style={{ backgroundColor: "#44ADD2" }}
-            onClick={() => {}}
-          >
-            <p className=" text-white font-bold">العربية</p>
-          </div> */}
-        </section>
+        ></section>
+        <SponserMinister />
         <Services />
         <Blog />
-        <Awards />
-        <Locations />
-        <Featured />
-        <Pricing />
+        <CoOperation />
+        <Creativity />
+        <WhyThisEvent />
+        <Sponser />
       </section>
     </>
   );

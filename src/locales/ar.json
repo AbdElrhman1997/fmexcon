@@ -1,5 +1,5 @@
 {
-  "NavBar": {
+  "common": {
     "main": "الرئيسية",
     "aboutUS": "نبذه عنا",
     "conference": "المؤتمر",

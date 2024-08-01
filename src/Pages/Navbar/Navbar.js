@@ -19,7 +19,7 @@ const Navbar = () => {
       data-aos-delay="500"
       dir={i18n.language == "en" ? "ltr" : "rtl"}
     >
-      <div className=" mx-auto flex justify-between items-center gap-6 px-3">
+      <div className=" mx-auto flex justify-between items-center gap-6">
         {/*lg screens nav*/}
         <img
           src={logoImg}
@@ -29,22 +29,22 @@ const Navbar = () => {
         <div className="flex justify-between items-center gap-8">
           <ul className="flex justify-between gap-4 lg:flex hidden text-bs font-semibold">
             <li>
-              <a href="/">{t("NavBar.main")}</a>
+              <a href="/">{t("common.main")}</a>
             </li>
             <li>
-              <a href="/About">{t("NavBar.aboutUS")}</a>
+              <a href="/About">{t("common.aboutUS")}</a>
             </li>
             <li>
-              <a href="/Services">{t("NavBar.conference")}</a>
+              <a href="/Services">{t("common.conference")}</a>
             </li>
             <li>
-              <a href="/Blog">{t("NavBar.sponsors")}</a>
+              <a href="/Blog">{t("common.sponsors")}</a>
             </li>
             <li>
-              <a href="/Pricing">{t("NavBar.login")}</a>
+              <a href="/Pricing">{t("common.login")}</a>
             </li>
             <li>
-              <a href="/Contact">{t("NavBar.events")}</a>
+              <a href="/Contact">{t("common.events")}</a>
             </li>
           </ul>
           <div className=" col-span-3 flex gap-6 items-center lg:flex hidden">
@@ -84,22 +84,22 @@ const Navbar = () => {
           }`}
         >
           <li>
-            <a href="/">{t("NavBar.main")}</a>
+            <a href="/">{t("common.main")}</a>
           </li>
           <li>
-            <a href="/About">{t("NavBar.aboutUS")}</a>
+            <a href="/About">{t("common.aboutUS")}</a>
           </li>
           <li>
-            <a href="/Services">{t("NavBar.conference")}</a>
+            <a href="/Services">{t("common.conference")}</a>
           </li>
           <li>
-            <a href="/Blog">{t("NavBar.sponsors")}</a>
+            <a href="/Blog">{t("common.sponsors")}</a>
           </li>
           <li>
-            <a href="/Pricing">{t("NavBar.login")}</a>
+            <a href="/Pricing">{t("common.login")}</a>
           </li>
           <li>
-            <a href="/Contact">{t("NavBar.events")}</a>
+            <a href="/Contact">{t("common.events")}</a>
           </li>
         </ul>
       </div>
