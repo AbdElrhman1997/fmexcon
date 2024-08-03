@@ -8,7 +8,7 @@ const WhatIsEvent = () => {
 
   return (
     <section
-      className="what-is-event px-16 my-10"
+      className="what-is-event px-16 mb-20"
       dir={i18n.language == "en" ? "ltr" : "rtl"}
     >
       <div className="lg:grid md:grid grid-cols-12">

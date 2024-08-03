@@ -1,10 +1,9 @@
 import React from "react";
-import FooterImg from "../../Images/logo-light.png";
 import "./Footer.css";
 import image1 from "../../Images/sary.png";
 import image2 from "../../Images/sfma.png";
 import image3 from "../../Images/mom.png";
-import image4 from "../../Images/fmtech.png";
+import image4 from "../../Images/Strategic-Sponsor.png";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 

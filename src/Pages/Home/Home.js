@@ -1,12 +1,16 @@
 import React from "react";
-import Services from "../WhatIsEvent/WhatIsEvent";
-import Blog from "../DigitalTransformation/DigitalTransformation";
-import CoOperation from "../CoOperation/CoOperation";
-import WhyThisEvent from "../WhyThisEvent/WhyThisEvent";
-import SponserMinister from "../SponserMinister/SponserMinister";
-import Creativity from "../Creativity/Creativity";
-import Sponser from "../Sponser/Sponser";
+import WhatIsEvent from "../../Components/WhatIsEvent/WhatIsEvent";
+import DigitalTransformation from "../../Components/DigitalTransformation/DigitalTransformation";
+import CoOperation from "../../Components/CoOperation/CoOperation";
+import WhyThisEvent from "../../Components/WhyThisEvent/WhyThisEvent";
+import SponserMinister from "../../Components/SponserMinister/SponserMinister";
+import Creativity from "../../Components/Creativity/Creativity";
+import Sponser from "../../Components/Sponser/Sponser";
 import "./Home.css";
+import EventDetails from "../../Components/EventDetails/EventDetails";
+import VideoSection from "../../Components/VideoSection/VideoSection";
+import RegisterWithUs from "../../Components/RegisterWithUs/RegisterWithUs";
+import GetNewUpdates from "../../Components/GetNewUpdates/GetNewUpdates";
 
 const Home = () => {
   return (
@@ -21,12 +25,16 @@ const Home = () => {
           data-aos-delay="700"
         ></section>
         <SponserMinister />
-        <Services />
-        <Blog />
+        <WhatIsEvent />
+        <VideoSection />
+        <EventDetails />
+        <DigitalTransformation />
         <CoOperation />
         <Creativity />
         <WhyThisEvent />
         <Sponser />
+        <RegisterWithUs />
+        <GetNewUpdates />
       </section>
     </>
   );

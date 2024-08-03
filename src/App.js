@@ -1,12 +1,12 @@
 import React from "react";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
-import WhatIsEvent from "./Pages/WhatIsEvent/WhatIsEvent";
-import DigitalTransformation from "./Pages/DigitalTransformation/DigitalTransformation";
-import Pricing from "./Pages/WhyThisEvent/WhyThisEvent";
+import WhatIsEvent from "./Components/WhatIsEvent/WhatIsEvent";
+import DigitalTransformation from "./Components/DigitalTransformation/DigitalTransformation";
+import Pricing from "./Components/WhyThisEvent/WhyThisEvent";
 import Contact from "./Pages/Contact/Contact";
-import Navbar from "./Pages/Navbar/Navbar";
-import Footer from "./Pages/Footer/Footer";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 function App() {

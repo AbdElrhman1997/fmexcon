@@ -23,7 +23,7 @@ const Navbar = () => {
         {/*lg screens nav*/}
         <img
           src={logoImg}
-          className="logo lg:col-span-3 md:col-span-3 col-span-6"
+          className="logo lg:col-span-3 md:col-span-3 col-span-6 lg:w-72 md:w-72 sm:w-64 w-48"
           alt="logo"
         />
         <div className="flex justify-between items-center gap-8">
