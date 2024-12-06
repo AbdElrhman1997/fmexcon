@@ -7,13 +7,11 @@ import "./i18n";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      {/* <I18nProvider lng="en" resources={resources}> */}
-      <App />
-      {/* </I18nProvider> */}
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    {/* <I18nProvider lng="en" resources={resources}> */}
+    <App />
+    {/* </I18nProvider> */}
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

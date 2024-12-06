@@ -1,25 +1,41 @@
 import React from "react";
-import Home from "./Pages/Home/Home";
-import About from "./Pages/About/About";
-import WhatIsEvent from "./Components/WhatIsEvent/WhatIsEvent";
-import DigitalTransformation from "./Components/DigitalTransformation/DigitalTransformation";
-import Pricing from "./Components/WhyThisEvent/WhyThisEvent";
-import Contact from "./Pages/Contact/Contact";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
+import { useTranslation } from "react-i18next";
+import Activities from "./Pages/Activities";
+import Sponsor from "./Pages/Sponsor";
+import Register from "./Pages/Register";
+import Conferance from "./Pages/Conferance";
+import Conditions from "./Pages/Conditions";
+import "react-toastify/dist/ReactToastify.css";
+import ScrollToTop from "./Components/ScrollToTop";
+import ScrollToAnchor from "./Components/ScrollToAnchor";
+
 function App() {
+  const { i18n } = useTranslation();
+  const defaultRoute = i18n.language === "ar" ? "/ar" : "/en";
+
   return (
     <div className="App">
+      <ScrollToTop />
+      <ScrollToAnchor />
       <Navbar />
+      <ToastContainer />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Services" element={<WhatIsEvent />} />
-        <Route path="/Blog" element={<DigitalTransformation />} />
-        <Route path="/Pricing" element={<Pricing />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="/" element={<Navigate to={defaultRoute} replace />} />
+        <Route path="/ar" element={<Home />} />
+        <Route path="/en" element={<Home />} />
+        <Route path="/:lang/About" element={<About />} />
+        <Route path="/:lang/activities" element={<Activities />} />
+        <Route path="/:lang/sponsores" element={<Sponsor />} />
+        <Route path="/:lang/register" element={<Register />} />
+        <Route path="/:lang/conferance" element={<Conferance />} />
+        <Route path="/:lang/conditions" element={<Conditions />} />
       </Routes>
       <Footer />
     </div>

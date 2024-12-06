@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 // import SwiperCore, { Keyboard, Mousewheel } from "swiper/core";
-import { Navigation, Scrollbar, A11y, EffectFade, Grid } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -64,7 +64,7 @@ const Carousel = ({ sponsers }) => {
         keyboard={true}
         mousewheel={true}
         className="Swiper"
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -81,21 +81,22 @@ const Carousel = ({ sponsers }) => {
             slidesPerView: 3,
           },
         }}
+        speed={1200}
         autoplay={{
-          delay: 2000,
-          disableOnInteraction: true,
+          delay: 1500, // Delay between transitions
+          disableOnInteraction: false, // Keep autoplay active after user interaction
         }}
       >
         <button
-          onClick={() => swiper.slidePrev()}
+          onClick={() => swiper.slideNext()}
           className="swiper-button-prev"
         ></button>
-        {sponsers.map((slide, i) => (
+        {sponsers?.map((slide, i) => (
           <SwiperSlide key={i}>
             <div className="category-img">
               <img
-                src={slide?.imgSrc}
-                className="swiper-img lg:w-32 md:w-48 w-40 mx-auto"
+                src={`https://admin.fmexcon.com/public/images/${slide?.image}`}
+                className="swiper-img xl:w-44 lg:w-44 md:w-44 w-40 mx-auto"
                 alt={`image ${slide?.name}`}
               />
             </div>
@@ -103,7 +104,7 @@ const Carousel = ({ sponsers }) => {
         ))}
         <div className="swiper-button-next-container">
           <button
-            onClick={() => swiper.slideNext()}
+            onClick={() => swiper.slidePrev()}
             className="swiper-button-next"
           ></button>
         </div>

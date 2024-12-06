@@ -1,10 +1,360 @@
 {
-  "NavBar": {
-    "main": "Main",
-    "aboutUS": "About US",
+  "common": {
+    "submit_success": "Submit Successfully",
+    "submit_error": "There was a problem registering Please try again"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
     "conference": "Conference",
     "sponsors": "Sponsors",
-    "login": "Reigister",
-    "events": "Events"
+    "register": "Register",
+    "activities": "Activities"
+  },
+  "digitalTransformation": {
+    "title": "Adoption of Smart Technology",
+    "description": "Encouraging the use of advanced technologies in facility management to improve operational efficiency, increase productivity, and reduce costs. By adopting smart and digital solutions, higher levels of performance and sustainability can be achieved in daily operations"
+  },
+  "coOperation": {
+    "title": "Developing Local Competencies",
+    "description": "Training and qualifying national staff on the latest technologies and practices in smart facility management to ensure their readiness to face future challenges and achieve the highest levels of efficiency and innovation."
+  },
+  "creativity": {
+    "title": "Promoting Sustainability",
+    "description": "Implementing smart solutions to achieve environmental and economic sustainability in facility management, contributing to improved performance, reduced environmental impact, and achieving sustainable financial savings.",
+    "buttonText": "Register with Us"
+  },
+  "eventDetails": {
+    "participationEntity": "Participation Entity",
+    "workshop": "Workshop",
+    "speakers": "Speakers"
+  },
+  "footer": {
+    "description": "Sary Exhibitions & Conferences is a leading company offering high-quality event management, exhibitions, and marketing services, through a specialized team that is always ready to provide everything new and innovative. Extensive experience with both government and private sectors, along with comprehensive support for subsidiary services. Your preferred partner, always.",
+    "linksTitle": "Links",
+    "links": {
+      "home": "Home",
+      "about": "About Us",
+      "conference": "Conference",
+      "sponsors": "Sponsors & Exhibitors",
+      "register": "Register",
+      "events": "Events"
+    },
+    "contactTitle": "Contact Us",
+    "contact": {
+      "phone1": "+966503776726",
+      "phone2": "+966554222273",
+      "address": "Riyadh International Convention and Exhibition Center"
+    }
+  },
+  "getUpdates": {
+    "title": "Get Event Updates",
+    "placeholder": "Enter your email",
+    "submit": "Submit"
+  },
+  "tourism": {
+    "ministry": {
+      "title": "Conference Activities 2024 Edition",
+      "visitSite": "Visit the Site"
+    }
+  },
+  "registerWithUs": {
+    "title": "Don't miss the opportunity to be part of the event",
+    "subtitle": "Enhance your presence and strengthen your brand",
+    "register": "Register with Us",
+    "view": "Exhibit With Us"
+  },
+  "sponsors": {
+    "strategicSponsor": "Strategic Sponsor",
+    "mainSponsor": "Main Sponsor",
+    "diamondSponsor": "Diamond Sponsor",
+    "goldSponsor": "Gold Sponsor",
+    "supportingPartners": "Supporting Partners"
+  },
+  "sponserMinister": {
+    "underPatronage": "Under the Patronage of",
+    "ministerTitle": "His Excellency, Minister of Municipal and Rural Affairs and Housing",
+    "ministerName": "Mr. Majed bin Abdullah Al-Hogail",
+    "eventDate": "The International Conference and Exhibition on Facility Management kicks off in September 2024"
+  },
+  "videoSection": {
+    "visionTitle": "Vision",
+    "visionDescription": "To become a central platform in the development and application of \"Facility Intelligence\" technologies, empowering businesses and individuals to adopt the latest smart solutions for effective and sustainable Facility Management . We aim to provide innovative solutions that align with the goals of Saudi Arabia's Vision 2030 to build a smart and sustainable future that enhances quality of life.",
+    "messageTitle": "Message",
+    "messageDescription": "Through the International Facility Management Conference and Exhibition 2025, we aim to empower industry leaders, innovators, and decision-makers to exchange knowledge and experiences in advanced \"Facility Intelligence\" technologies. This will be achieved through meetings and collaborations that bring together experts and innovators in this field.",
+    "participantsTitle": "Participants",
+    "participantsDescription": "The event attracts a select group of experts, specialists, and the largest facilities in the field of facility management from around the world.",
+    "sloganTitle": "Our Theme",
+    "sloganDescription": "Facility Intelligence"
+  },
+  "whatIsEvent": {
+    "whatIs": "What is",
+    "eventTitle": "About the International Facility Management Conference and Exhibition 2025",
+    "eventDescription": "The 2025 International Facility Management Conference and Exhibition, in its second edition, comes under the theme \"Facility Intelligence.\" It will serve as a leading platform that brings together local and international experts, decision-makers, and innovators in the field of Facility Management . The conference aims to showcase the latest developments and technologies in smart Facility Management , as well as to exchange experiences and best practices to achieve a sustainable and intelligent future. The conference aligns with the goals of Saudi Arabia's Vision 2030, which seeks to transform the kingdom into a global model in various aspects of life, from sustainable economy to modern technology. By promoting innovation in Facility Management , the conference contributes to achieving this ambitious vision through the development of smart infrastructure and enhancing resource management efficiency."
+  },
+  "whyThisEvent": {
+    "governmentEntities": "Government Entities",
+    "whySponsor": "Why Sponsor This Event?",
+    "description1": "The largest and most specialized exhibition in the field of facility management.",
+    "description2": "Significant interest from various government entities, agencies, and private sector establishments.",
+    "description3": "The ideal venue to showcase the latest technologies and equipment.",
+    "description4": "The largest event of its kind in the Gulf region and the Arab world.",
+    "exhibitWithUs": "Exhibit with Us"
+  },
+  "registrationForm": {
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "invalidEmail": "Invalid email address",
+    "emailRequired": "Email is required",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "firstNameRequired": "First name is required",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "lastNameRequired": "Last name is required",
+    "company": "Company",
+    "companyPlaceholder": "Enter your company name",
+    "companyRequired": "Company is required",
+    "jobTitle": "Job Title",
+    "jobTitlePlaceholder": "Enter your job title",
+    "jobTitleRequired": "Job title is required",
+    "websiteUrl": "Website URL",
+    "websiteUrlPlaceholder": "Enter your website URL",
+    "phone": "Phone",
+    "phonePlaceholder": "Enter your phone number",
+    "phoneRequired": "Phone number is required",
+    "message": "Leave your message",
+    "messagePlaceholder": "Message",
+    "submit": "Register with us",
+    "submit_as_speaker": "Register as speaker"
+  },
+  "sponseresForm": {
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "invalidEmail": "Invalid email address",
+    "emailRequired": "Email is required",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "firstNameRequired": "First name is required",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "lastNameRequired": "Last name is required",
+    "company": "Company",
+    "companyPlaceholder": "Enter your company name",
+    "companyRequired": "Company is required",
+    "jobTitle": "Job Title",
+    "jobTitlePlaceholder": "Enter your job title",
+    "jobTitleRequired": "Job title is required",
+    "websiteUrl": "Website URL",
+    "websiteUrlPlaceholder": "Enter your website URL",
+    "phone": "Phone",
+    "phonePlaceholder": "Enter your phone number",
+    "phoneRequired": "Phone number is required",
+    "invalidPhone": "Please enter valid phone number ",
+    "message": "Message",
+    "messagePlaceholder": "Leave your message here",
+    "submit": "Submit"
+  },
+  "about": {
+    "aboutImageAlt": "About the conference image",
+    "title": "About Us",
+    "poweredBy": "Powered by SFMA",
+    "aboutUs": "About Us",
+    "aboutExpo": "About SFMA EXPO 2024",
+    "description": "The 2025 International Facility Management Conference and Exhibition, in its second edition, comes under the theme \"Facility Intelligence.\" It will serve as a leading platform that brings together local and international experts, decision-makers, and innovators in the field of Facility Management . The conference aims to showcase the latest developments and technologies in smart Facility Management , as well as to exchange experiences and best practices to achieve a sustainable and intelligent future. The conference aligns with the goals of Saudi Arabia's Vision 2030, which seeks to transform the kingdom into a global model in various aspects of life, from sustainable economy to modern technology. By promoting innovation in Facility Management , the conference contributes to achieving this ambitious vision through the development of smart infrastructure and enhancing resource management efficiency.",
+    "card1ImageAlt": "Learn",
+    "card1Title": "Learn",
+    "card1Description": "Learn with us about the opportunities for innovation in operations and procedures to achieve excellence in facilities management.",
+    "card2ImageAlt": "Discover",
+    "card2Title": "Discover",
+    "card2Description": "Learn with us about the various experiences and practices in the field of facilities management.",
+    "card3ImageAlt": "Benefit",
+    "card3Title": "Benefit",
+    "card3Description": "By attending and participating with us, you will be able to benefit from local and international expertise in the field of facilities management.",
+    "dontMissOut": "Don’t miss the chance to be part of the event",
+    "boostYourBrand": "Enhance your presence and reinforce your brand",
+    "registerWithUs": "Register with us",
+    "exhibitWithUs": "Exhibit with us",
+    "ministerImageAlt": "Minister Image"
+  },
+  "activities": {
+    "title": "Activities",
+    "powered_by": "powered by SFMA",
+    "international_conference_title": "International Conference on Facility Management",
+    "learn_about_activities": "Learn About Activities",
+    "activities_description": "A new addition to this year's conference is the business exchange platform, which allows companies to interact with their target audience to inform them about their activities and updates.",
+    "enhance_your_presence": "Enhance Your Presence",
+    "through_your_participation": "Through Your Participation",
+    "participation_description": "Take advantage of this opportunity for a unique experience, including tours of modern facilities and other benefits.",
+    "dinner": "Dinner",
+    "facility_tours": "Facility Tours",
+    "participation_opportunity": "Take advantage of this opportunity for a unique experience.",
+    "contact_us": "Contact Us"
+  },
+  "conditions": {
+    "title": "Guidelines and Conditions",
+    "powered_by": "Powered by SFMA",
+    "call_for_presentations": "Call for Presentations",
+    "conference_overview": "Overview of the International Conference and Exhibition for Facility Management (Organized by the Saudi Facility Management Association - SFMA)",
+    "conference_description": "The International Conference and Exhibition for Facility Management 2025 returns for its second edition under the theme 'Facility Intelligence.' This premier platform brings together local and international experts, decision-makers, and innovators in the field of facility management. The conference aims to showcase the latest advancements and technologies in smart facility management, exchange knowledge, and share best practices to achieve a sustainable and intelligent future. Aligned with Saudi Arabia's Vision 2030, the conference supports the nation's transformation into a global model of excellence, from sustainable economies to cutting-edge technology. By promoting innovation in facility management, the conference contributes to realizing this ambitious vision through developing smart infrastructure and achieving greater resource efficiency.",
+    "conference_info": "Conference Information:",
+    "conference_dates": "- Date: August 24–26, 2025",
+    "conference_dates2": "- Time: 9:00 AM to 7:00 PM",
+    "conference_location": "- Location: Riyadh International Convention and Exhibition Center",
+    "conference_topics": "Conference Topics:",
+    "topic_1": "1. Smart Facility Technologies: Exploring the latest innovations in facility management.",
+    "topic_2": "2. Sustainable Facility Management: Emphasizing sustainable practices in project planning and execution.",
+    "topic_3": "3. Innovation and Digital Transformation: Leveraging digital transformation and IT in facilities.",
+    "invitation": "Call for Presentations:",
+    "invitation_text": "The Saudi Facility Management Association (SFMA) invites you to share your knowledge and expertise as a presenter at the International Conference and Exhibition for Facility Management 2025. This is the perfect opportunity to showcase your expertise and research on an international level.",
+    "submission_deadline": "Important Dates",
+    "acceptance_criteria": "We would like to emphasize the importance of adhering to the specified deadlines for submitting papers and presentations. Late submissions may affect the final evaluation and participation, so please ensure compliance with the deadlines to ensure a smooth workflow.",
+    "requirements": "Please refer to the attached files for the terms and requirements for presentation submission.",
+    "download_first_file": "First File",
+    "download_second_file": "Second File"
+  },
+  "conference": {
+    "title": "Conference",
+    "powered_by": "Powered by",
+    "register": "Register",
+    "speaker_register": "Register as Speaker",
+    "program": "Conference Program",
+    "overview_title": "Conference Overview",
+    "event_name": "International Conference and Exhibition for Facility Management 2025",
+    "theme": "Under the theme: Facility Intelligence",
+    "description_title": "Conference Description:",
+    "description_text": "The International Conference and Exhibition for Facility Management 2025 returns for its second edition under the slogan \"Facility Intelligence.\" It serves as a leading platform that brings together local and international experts, decision-makers, and innovators in the field of facility management. The conference aims to showcase the latest developments and technologies in smart facility management and to exchange experiences and best practices to achieve a sustainable and intelligent future. The conference aligns with the goals of Saudi Arabia's Vision 2030, which seeks to transform the Kingdom into a global model in various aspects of life, from sustainable economy to modern technology. By promoting innovation in facility management, the conference contributes to achieving this ambitious vision through the development of smart infrastructure and enhancing resource management efficiency.",
+    "info_title": "Conference Information",
+    "date": "Date",
+    "time": "Time",
+    "start_time": "From 9:00 AM",
+    "end_time": "To 5:00 PM",
+    "location": "Location",
+    "venue": "Riyadh International Convention and Exhibition Center",
+    "participation_reason_title": "Reason for Participation:",
+    "participation_reason_text": "The International Conference and Exhibition for Facility Management 2025 offers a rich platform with sessions showcasing the latest innovations and advanced technologies in this field. A select group of experts and speakers will provide unique and inspiring insights aimed at enhancing facility efficiency and sustainable performance, while presenting future solutions to tackle challenges in innovative ways.",
+    "topics_title": "Conference Topics",
+    "topic1": "Predictive Analytics",
+    "topic2": "Facility Management in Specialized Sectors",
+    "topic3": "Smart Building Management Systems",
+    "topic4": "Enhancing User Experience",
+    "topic5": "Security, Safety, and Occupational Health",
+    "topic6": "Energy Sustainability",
+    "topic7": "Transition to Performance Management",
+    "commitment_title": "Objectives: Smart Technology, Strong Partnerships, Sustainable Future for Our Facilities",
+    "commitment_text_1": "Enhancing Sustainability: Implementing smart solutions to achieve environmental and economic sustainability in facility management.",
+    "commitment_text_2": "Promoting Collaboration: Building international and local partnerships to exchange knowledge and expertise in facility management.",
+    "commitment_text_3": "Adopting Smart Technology: Encouraging the use of advanced technologies in facility management to improve operational efficiency.",
+    "commitment_text_4": "Empowering Innovation: Supporting innovative ideas and startups that offer new solutions in the field of Facility Intelligence.",
+    "commitment_text_5": "Developing Local Competencies: Training and qualifying national staff on the latest technologies and practices in smart facility management.",
+    "vision_title": "Vision: Towards Smart and Sustainable Facilities that Meet Future Aspirations",
+    "vision_text": "To become a central platform in the development and application of \"smart facility\" technologies, enabling companies and individuals to adopt the latest smart solutions for effective and sustainable facility management. We aim to provide innovative solutions that align with the goals of Saudi Arabia's Vision 2030, building a smart and sustainable future that enhances quality of life.",
+    "mission_title": "Mission: Innovative Technologies for Efficient and Sustainable Facilities that Meet Aspirations",
+    "mission_text_1": "Through the International Conference and Exhibition for Facility Management 2025, we aim to empower industry leaders, innovators, and decision-makers to exchange knowledge and expertise in advanced \"smart facility\" technologies through meetings and collaborations that bring together experts and innovators in this field.",
+    "research_title": "Research",
+    "research_text": "Research details.",
+    "day1": "Day 1",
+    "day2": "Day 2",
+    "day3": "Day 3",
+    "day1_image": {
+      "alt": "Day 1 Image"
+    },
+    "day2_image": {
+      "alt": "Day 2 Image"
+    },
+    "day3_image": {
+      "alt": "Day 3 Image"
+    },
+    "validation": {
+      "first_name": "First name is required",
+      "last_name": "Last name is required",
+      "email_invalid": "Email address is invalid",
+      "email_required": "Email is required",
+      "phone_required": "Phone number is required",
+      "jobtitle_required": "Job title is required"
+    }
+  },
+  "home": {
+    "title": "Home",
+    "show_with_us": "Exhibit With Us",
+    "register_with_us": "Register With Us"
+  },
+  "register": {
+    "title": "Register Now",
+    "poweredBy": "Powered by SFMA",
+    "address": "Riyadh International Convention and Exhibition Center",
+    "date": "From 24th to 26th August 2025",
+    "time1": "Conference: From 9 AM to 6 PM",
+    "time2": "Exhibition: From 9 AM to 7 PM"
+  },
+  "sponsor": {
+    "displayWithUs": "Display With Us",
+    "poweredBy": "Powered by SFMA",
+    "enhanceYourPresence": "Enhance Your Presence",
+    "introductionText": "Join us to showcase your brand and engage with our audience.",
+    "card1": {
+      "title": "Card 1 Title",
+      "description": "Description for card 1.",
+      "alt": "Image for card 1"
+    },
+    "card2": {
+      "title": "Card 2 Title",
+      "description": "Description for card 2.",
+      "alt": "Image for card 2"
+    },
+    "card3": {
+      "title": "Card 3 Title",
+      "description": "Description for card 3.",
+      "alt": "Image for card 3"
+    },
+    "whySponsor": "Why Sponsor?",
+    "benefitsIntro": "Discover the benefits of sponsoring our event.",
+    "location": {
+      "title": "Location Benefits",
+      "description": "Description of location benefits.",
+      "alt": "Location benefits image"
+    },
+    "target": {
+      "title": "Target Audience",
+      "description": "Description of the target audience.",
+      "alt": "Target audience image"
+    },
+    "participants": {
+      "title": "Participants Engagement",
+      "description": "Description of participants engagement.",
+      "alt": "Participants engagement image"
+    },
+    "dontMissOpportunity": "Don’t Miss This Opportunity!",
+    "enhanceYourBrand": "Enhance Your Brand’s Visibility!",
+    "registerWithUs": "Register With Us"
+  },
+  "sponsor_1": {
+    "aboutImage": "About Us Image",
+    "exhibit_with_us": "Exhibit with Us",
+    "powered_by": "Powered by SFMA",
+    "boost_presence": "Boost Your Presence and Strengthen Your Brand",
+    "promotion_text": "We inform you that once you contact us, you can book one of the exhibition stands at the conference. This is an important opportunity to promote your brand and the services you provide, learn about your competitors in the Saudi market (the largest market in the Middle East), conduct business, and conclude numerous deals. One of the organizing team members will contact you to complete the booking procedures, provide advice, and answer all your questions, helping us serve you better.",
+    "card1_title": "The Largest Event of Its Kind",
+    "card1_text": "It is the specialized exhibition and conference in the field of facility management in the region. The conference aims to provide an unparalleled platform to explore the latest products, innovations, and technological advancements in facility management globally. It will bring together leaders in the field to offer insights on building flexible business models with agile automated digital processes.",
+    "card2_title": "Showcasing the Latest Technologies and Devices",
+    "card2_text": "The conference aims to showcase the latest technologies and devices in facility management. Technology plays a significant role in improving operational efficiency and achieving maintenance and operational goals in facility management. Modern technologies can help avoid issues such as equipment failure, maintenance neglect, and inefficient resource use. Technology employs its ability to measure, analyze, and detect patterns in large data sets to achieve efficiency and continuous improvement.",
+    "card3_title": "Building Profitable Investment Relationships",
+    "card3_text": "This event provides an ideal platform for building strong and profitable investment relationships. The conference brings together various companies and investors in the facility management sector, offering opportunities for networking and collaboration. To build successful investment relationships, we must be aware of the importance of communication and trust. Investing in joint projects or sharing knowledge and expertise between companies and investors can be the foundation of strong relationships. Additionally, we must be prepared to learn and adapt to changes in the facility management market. By adopting sustainable strategies and leveraging emerging opportunities, we can build investment relationships that enhance the success of our projects and promote sector growth.",
+    "why_sponsor_title": "Why Sponsor This Event?",
+    "why_sponsor_text": "Choosing one of the conference and exhibition sponsorship categories will grant you many benefits according to each category. You can learn more about the advantages by contacting us and reviewing the detailed sponsorship benefits.",
+    "location": "Exhibition Location",
+    "location_text": "The exhibition will be held in Riyadh, specifically at the Riyadh International Convention and Exhibition Center, which is a central and convenient location that makes it easily accessible from various areas.",
+    "target_audience": "Target Audience",
+    "target_audience_text": "The exhibition targets a local and international audience, which means that it seeks to attract visitors and exhibitors from within and outside the country.",
+    "participants": "Participants",
+    "participants_text": "The exhibition includes a number of participants from the public and private sectors, and is a platform to meet experts, academics, decision-makers and those interested in the field of facilities management.",
+    "dont_miss_event": "Don't Miss the Opportunity to Be Part of the Event",
+    "boost_presence_slogan": "Boost Your Presence and Strengthen Your Brand",
+    "register_with_us": "Register with Us",
+    "exhibit_with_us_button": "Exhibit with Us",
+    "register_image_alt": "Registration Image",
+    "map_image_alt": "Map Image",
+    "page_title": "Sponsor Page",
+    "download_map": "Download Map"
   }
 }

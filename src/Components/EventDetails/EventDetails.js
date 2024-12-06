@@ -1,77 +1,32 @@
 import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Navigation, Scrollbar, A11y, EffectFade, Grid } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "./EventDetails.css";
+import { useTranslation } from "react-i18next";
 
 const EventDetails = ({ sponsers }) => {
-  const swiper = useSwiper();
+  const { i18n, t } = useTranslation();
 
-  const EventDetails = [
-    { title: "جهة المشاركة", count: "66+" },
-    { title: "ورشة العمل", count: "13+" },
-    { title: "متحدث", count: "50+" },
-    { title: "جهة المشاركة", count: "66+" },
-    { title: "ورشة العمل", count: "13+" },
-    { title: "متحدث", count: "50+" },
+  const eventDetails = [
+    { title: t("eventDetails.participationEntity"), count: "207+" },
+    { title: t("eventDetails.workshop"), count: "65+" },
+    { title: t("eventDetails.speakers"), count: "50+" },
+    { title: t("eventDetails.participationEntity"), count: "207+" },
+    { title: t("eventDetails.workshop"), count: "65+" },
+    { title: t("eventDetails.speakers"), count: "50+" },
   ];
 
   return (
     <section className="category container">
-      {/* <Swiper
-        // install Swiper modules
-        className="Swiper text-center"
-        modules={[Navigation, Scrollbar, A11y, EffectFade, Grid]}
-        breakpoints={{
-          // when window width is >= 640px
-          640: {
-            width: 540,
-            slidesPerView: 1,
-          },
-          // when window width is >= 768px
-
-          768: {
-            width: 768,
-            slidesPerView: 2,
-          },
-
-          1024: {
-            width: 1024,
-            slidesPerView: 3,
-          },
-        }}
-        spaceBetween={40}
-        keyboard={true}
-        mousewheel={true}
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        grabCursor={false}
-        speed={200}
-        navigation={true}
-        // onMouseEnter={() => {
-        //   this.scrollbar.hide = false;
-        // }}
-      >
-        <button onClick={() => swiper.slidePrev()}></button>
-        {slides.map((slide, i) => (
-          <SwiperSlide key={i}>
-            <CarouselItem
-              imgSrc={slide.imgSrc}
-              name={slide.name}
-              count={slide.count}
-            />
-          </SwiperSlide>
-        ))}
-        <button onClick={() => swiper.slideNext()}></button>
-      </Swiper> */}
       <Swiper
         keyboard={true}
         mousewheel={true}
         className="Swiper"
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         navigation={{
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -88,24 +43,24 @@ const EventDetails = ({ sponsers }) => {
             spaceBetween: 20,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 4,
             spaceBetween: 30,
           },
         }}
+        speed={1500}
         autoplay={{
-          delay: 2000,
-          disableOnInteraction: true,
+          delay: 2000, // Delay between transitions
+          disableOnInteraction: false, // Keep autoplay active after user interaction
         }}
-        grabCursor={true}
       >
-        {EventDetails.map((item, i) => (
+        {eventDetails.map((item, i) => (
           <SwiperSlide
             key={i}
             style={{
               color:
-                item?.count == "66+"
+                item?.count == "207+"
                   ? "#4aa6d3"
-                  : item?.count == "13+"
+                  : item?.count == "65+"
                   ? "#319694"
                   : item?.count == "50+"
                   ? "#808080"

@@ -1,7 +1,135 @@
 .App {
   text-align: center;
   position: relative;
-  top: 80px;
+  top: 64px;
   width: 100%;
   overflow: hidden;
+}
+.back-ground .text {
+  left: 0 !important;
+  position: absolute;
+  right: -4%;
+  top: 38%;
+  z-index: 20;
+}
+.back-ground .text h3 {
+  color: #fff;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 48px;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 4px 4px #105be6;
+}
+.back-ground {
+  height: 320px;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.back-ground:before {
+  background-color: #00000094;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.about-img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.btn-view-home {
+  background: #fff;
+  border-radius: 30px;
+  color: #44add2;
+  outline: 1.3px solid #44add2;
+  transition: all 0.3s ease-in-out;
+}
+.btn-register-home {
+  background: #44add2;
+  border-radius: 30px;
+  color: #fff;
+  transition: all 0.22s ease-in-out;
+}
+.minister-watermark::before {
+  background-image: url(./Images/ID-المرافق.png);
+  background-position: 50%;
+  background-size: cover;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.17;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.visit-saudi-company {
+  align-items: center;
+  background-attachment: fixed;
+  background-image: url("./Images/2024-banner.png");
+  background-position: 50%;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  height: 37vh;
+  justify-content: center;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.visit-saudi-company-button {
+  border: 3px solid #44add2;
+  border-radius: 30px;
+  color: #44add2;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 25px auto;
+  padding: 5px 40px;
+  transition: all 0.3s ease-in-out;
+}
+.visit-saudi-company::before {
+  content: "";
+  background-color: #44add2;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.clip-path-closed {
+  clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+}
+
+.clip-path-open {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.homeSec {
+  position: relative;
+  height: calc(100vh - 64px);
+  object-fit: "cover";
+  background-image: url(../src/Images/home.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 568px) {
+  .homeSec {
+    position: relative;
+    height: 70vh;
+    object-fit: "cover";
+    background-image: url(../src/Images/home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 }
