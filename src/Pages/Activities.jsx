@@ -1,6 +1,6 @@
 import React from "react";
-import aboutImage from "../Images/aboutImage.png";
-import dinner from "../Images/dinner.png";
+// import aboutImage from "../Images/aboutImage.png";
+// import dinner from "../Images/dinner.png";
 import GetNewUpdates from "../Components/GetNewUpdates/GetNewUpdates";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -16,11 +16,11 @@ const Activities = () => {
       dir={i18n.language === "en" ? "ltr" : "rtl"}
     >
       <div className="lg:col-span-12 col-span-12 back-ground">
-        <img
+        {/* <img
           src={aboutImage}
           className="about-img col-span-12"
           alt="aboutImage"
-        />
+        /> */}
         <div className="text text-center">
           <h3>{i18n.t("activities.title")}</h3>
           <p className="mt-6 text-white">{i18n.t("activities.powered_by")}</p>
@@ -28,7 +28,7 @@ const Activities = () => {
       </div>
 
       <div className="col-span-12">
-        <div className="lg:grid md:grid grid-cols-12 px-16 mt-4 mb-10">
+        <div className="lg:grid md:grid grid-cols-12 mt-4 mb-10">
           <div className="col-span-12 my-auto">
             <p className="text-[#44add2] font-bold text-xl mb-3 text-center">
               {i18n.t("activities.international_conference_title")}
@@ -44,7 +44,7 @@ const Activities = () => {
       </div>
 
       <div className="col-span-12 px-3 mb-12">
-        <div className="lg:grid md:grid grid-cols-12 px-16 mt-4 mb-10">
+        <div className="lg:grid md:grid grid-cols-12 mt-4 mb-10">
           <div className="col-span-12 my-auto">
             <p className="text-[#44add2] font-bold text-xl mb-3">
               {i18n.t("activities.enhance_your_presence")}
@@ -57,9 +57,9 @@ const Activities = () => {
             </p>
           </div>
         </div>
-        <div className="px-16 lg:flex md:flex sm:flex justify-around items-center">
+        <div className="lg:flex md:flex sm:flex justify-around items-center">
           <div className="flex items-center gap-6">
-            <img src={dinner} className="w-28" alt="Dinner" />
+            {/* <img src={dinner} className="w-28" alt="Dinner" /> */}
             <p className="text-xl font-bold">{i18n.t("activities.dinner")}</p>
           </div>
           <div className="flex items-center gap-6 lg:mt-0 md:mt-0 sm:mt-0 mt-10">
@@ -72,12 +72,12 @@ const Activities = () => {
       </div>
 
       <div
-        className={`why-this-event col-span-12 lg:px-16 md:px-16 px-5 ${
+        className={`why-this-event col-span-12 ${
           i18n.language === "en" ? "text-left" : "text-right"
         }`}
       >
         <div className="lg:grid md:grid grid-cols-12 gap-6 mx-auto w-fit">
-          <div className="lg:col-span-6 md:col-span-6 col-span-12 lg:px-16 md:px-16 px-5 my-auto text-white">
+          <div className="lg:col-span-6 md:col-span-6 col-span-12 my-auto text-white">
             <p className="text-2xl font-bold">
               {i18n.t("activities.enhance_your_presence")}
             </p>

@@ -12,7 +12,7 @@ const Carousel = ({ sponsers }) => {
   const swiper = useSwiper();
 
   return (
-    <section className="category container">
+    <section className="category container" dir="rtl">
       {/* <Swiper
         // install Swiper modules
         className="Swiper text-center"
@@ -94,11 +94,18 @@ const Carousel = ({ sponsers }) => {
         {sponsers?.map((slide, i) => (
           <SwiperSlide key={i}>
             <div className="category-img">
-              <img
-                src={`https://admin.fmexcon.com/public/images/${slide?.image}`}
-                className="swiper-img xl:w-44 lg:w-44 md:w-44 w-40 mx-auto"
-                alt={`image ${slide?.name}`}
-              />
+              <a
+                href={slide.url || "#"}
+                className="card-link text-xl hover:opacity-90 text-text"
+                dir="rtl"
+                target="_blank"
+              >
+                <img
+                  src={`https://admin.fmexcon.com/public/images/${slide?.image}`}
+                  className="swiper-img md:w-40 w-32 mx-auto"
+                  alt={`image ${slide?.name}`}
+                />
+              </a>
             </div>
           </SwiperSlide>
         ))}

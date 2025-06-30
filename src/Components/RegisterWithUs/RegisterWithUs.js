@@ -1,7 +1,6 @@
 import React from "react";
 import "./RegisterWithUs.css";
 import { useTranslation } from "react-i18next";
-import RegisterWithUsImage from "../../Images/RegisterWithUs.png";
 import { Link } from "react-router-dom";
 
 const RegisterWithUs = () => {
@@ -9,7 +8,7 @@ const RegisterWithUs = () => {
 
   return (
     <section
-      className={`register-with-us my-8 lg:px-16 md:px-16 px-5 py-16 ${
+      className={`register-with-us my-8 py-16 ${
         i18n.language === "en" ? "text-left" : "text-right"
       }`}
       dir={i18n.language === "en" ? "ltr" : "rtl"}
@@ -39,7 +38,7 @@ const RegisterWithUs = () => {
         </div>
         <div className="lg:col-span-6 md:col-span-6 col-span-12 mx-2">
           <img
-            src={RegisterWithUsImage}
+            src="/images/RegisterWithUs.png"
             className="mx-auto w-full my-4"
             alt="Register With Us"
           />

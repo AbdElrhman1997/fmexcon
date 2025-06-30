@@ -27,8 +27,21 @@ const SponseresForm = () => {
     last_name: Yup.string().required(t("sponseresForm.lastNameRequired")),
     jobtitle: Yup.string().required(t("sponseresForm.jobTitleRequired")),
     phone: Yup.string()
-      .matches(/^\d+$/, t("sponseresForm.invalidPhone"))
-      .required(t("sponseresForm.phoneRequired")),
+      .required(t("registrationForm.phoneRequired"))
+      .test(
+        "valid-saudi-phone",
+        t("registrationForm.phoneTooShort"),
+        (value) => {
+          if (!value) return false;
+          // إزالة أي شيء غير رقمي
+          const digits = value.replace(/\D/g, "");
+          // لازم يبدأ بـ 966
+          if (!digits.startsWith("966")) return false;
+          // عدد الأرقام بعد 966 لازم يكون 9 أو أكثر
+          const localNumber = digits.slice(3); // بعد أول 3 أرقام (كود الدولة)
+          return localNumber.length >= 9;
+        }
+      ),
   });
 
   const handleSubmit = async (values, { resetForm }) => {

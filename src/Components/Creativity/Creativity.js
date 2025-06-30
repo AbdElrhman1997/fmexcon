@@ -1,7 +1,6 @@
 import React from "react";
 import "./Creativity.css";
 import { useTranslation } from "react-i18next";
-import CreativityImage from "../../Images/creativity.png";
 import { Link } from "react-router-dom";
 
 const Creativity = () => {
@@ -9,39 +8,27 @@ const Creativity = () => {
 
   return (
     <section
-      className={`creativity lg:px-16 md:px-16 px-5 py-8 ${
+      className={`creativity md:py-8 container mx-auto ${
         i18n.language === "en" ? "text-left" : "text-right"
       }`}
       dir={i18n.language === "en" ? "ltr" : "rtl"}
     >
       <div className="lg:grid md:grid grid-cols-12 gap-6">
-        <div className="lg:col-span-6 md:col-span-6 col-span-12">
+        <div className="lg:col-span-6 md:col-span-6 col-span-12 my-auto md:text-justify text-center">
+          <p className="md:text-4xl text-2xl font-bold">
+            {t("videoSection.participantsTitle")}
+          </p>
+          <p className=" md:text-[18px] text-base mt-2 leading-loose">
+            {t("videoSection.participantsDescription")}
+          </p>
+        </div>
+        <div className="lg:col-span-6 md:col-span-6 col-span-12 md:mb-0 mb-8">
           <img
-            src={CreativityImage}
-            className="mx-auto w-full my-4"
+            src="/images/main_page_3.jpg"
+            className="mx-auto md:h-full h-72  my-4"
             alt="creativity_image"
           />
         </div>
-        <div className="lg:col-span-6 md:col-span-6 col-span-12 px-6 my-auto">
-          <p
-            style={{
-              color: "#44add2",
-              fontWeight: "bold",
-            }}
-            className="xl:text-2xl lg:text-2xl md:text-2xl text-xl"
-          >
-            {t("creativity.title")}
-          </p>
-          <p className="my-2">-----------</p>
-          <p className="text-justify xl:text-lg lg:text-lg md:text-lg text-base">
-            {t("creativity.description")}
-          </p>
-        </div>
-        <button className="btn-creativity col-span-12 lg:block md:block flex justify-center">
-          <Link to={`/${i18n.language}/register`} className="text-2xl">
-            {t("creativity.buttonText")}
-          </Link>
-        </button>
       </div>
     </section>
   );

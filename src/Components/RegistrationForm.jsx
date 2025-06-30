@@ -1,53 +1,188 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Select from "react-select";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import SuccessModal from "./SuccessModal";
+import FailedModal from "./FailedModal";
+import countriesData from "../assets/countries.json";
+import sectorsData from "../assets/sectors.json";
 
-const RegistrationForm = ({ fromRegister }) => {
+const RegistrationForm = ({ isVisitor, isSpeaker, isExhibitor }) => {
   const { t, i18n } = useTranslation();
   const nav = useNavigate();
+  const [successModal, setSuccessModal] = useState(false);
+  const [failedModal, setFailedModal] = useState(false);
+  const [policyModal, setPolicyModal] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedGender, setSelectedGender] = useState("");
+  const [selectedSector, setSelectedSector] = useState("");
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const tog_modal = () => {
+    setSuccessModal(!successModal);
+    return successModal;
+  };
+
+  const tog_failed_modal = () => {
+    setFailedModal(!failedModal);
+    return failedModal;
+  };
+
+  const tog_policy_modal = () => {
+    setPolicyModal(!policyModal);
+    return policyModal;
+  };
 
   const initialValues = {
-    email: "",
     first_name: "",
     last_name: "",
-    company: "",
-    job_title: "",
-    website_url: "",
+    email: "",
     phone: "",
+    job_title: "",
+    company: "",
     message: "",
+    ...(!isExhibitor ? {} : { website_url: "" }),
+    ...(!isExhibitor ? {} : { country: "" }),
+    ...(!isExhibitor ? {} : { city: "" }),
+    ...(!isExhibitor ? {} : { sex: "" }),
+    ...(!isExhibitor ? {} : { sector: "" }),
+  };
+
+  const countryOptions = countriesData.map((country) => ({
+    value: country.name,
+    label: i18n.language == "en" ? country.en : country.ar,
+  }));
+
+  const genderOptions = [
+    {
+      value: "male",
+      label: i18n.language == "en" ? "male" : "ذكر",
+    },
+    {
+      value: "female",
+      label: i18n.language == "en" ? "female" : "أنثى",
+    },
+  ];
+
+  const sectorOptions = sectorsData.map((sector) => ({
+    value: sector.value,
+    label: i18n.language == "en" ? sector.en : sector.ar,
+  }));
+
+  const handleCountryChange = (selectedOption) => {
+    setSelectedCountry(selectedOption);
+  };
+
+  const handleGenderChange = (selectedOption) => {
+    setSelectedGender(selectedOption);
+  };
+
+  const handleSectorChange = (selectedOption) => {
+    setSelectedSector(selectedOption);
   };
 
   const validationSchema = Yup.object().shape({
+    first_name: Yup.string().required(t("registrationForm.firstNameRequired")),
+    last_name: Yup.string().required(t("registrationForm.lastNameRequired")),
     email: Yup.string()
       .email(t("registrationForm.invalidEmail"))
       .required(t("registrationForm.emailRequired")),
-    first_name: Yup.string().required(t("registrationForm.firstNameRequired")),
-    last_name: Yup.string().required(t("registrationForm.lastNameRequired")),
-    company: Yup.string().required(t("registrationForm.companyRequired")),
+    phone: Yup.string()
+      .required(t("registrationForm.phoneRequired"))
+      .test(
+        "valid-saudi-phone",
+        t("registrationForm.phoneTooShort"),
+        (value) => {
+          if (!value) return false;
+          // إزالة أي شيء غير رقمي
+          const digits = value.replace(/\D/g, "");
+          // لازم يبدأ بـ 966
+          if (!digits.startsWith("966")) return false;
+          // عدد الأرقام بعد 966 لازم يكون 9 أو أكثر
+          const localNumber = digits.slice(3); // بعد أول 3 أرقام (كود الدولة)
+          return localNumber.length >= 9;
+        }
+      ),
     job_title: Yup.string().required(t("registrationForm.jobTitleRequired")),
-    phone: Yup.string().required(t("registrationForm.phoneRequired")),
+    company: Yup.string().required(t("registrationForm.companyRequired")),
     message: Yup.string(),
   });
 
   const handleSubmit = async (values, { resetForm }) => {
-    // Replace this URL with your API endpoint
+    const url = isVisitor
+      ? "https://admin.fmexcon.com/api/userRegisterStore"
+      : isExhibitor
+      ? "https://admin.fmexcon.com/api/sponsorRegisterStore"
+      : isSpeaker
+      ? "https://admin.fmexcon.com/api/conferanceRegisterStore"
+      : "";
+
     await axios
-      .post("https://admin.fmexcon.com/api/sponsorRegisterStore", values)
-      .then(() => {
-        toast.success(t("common.submit_success"));
-        // nav(`/${i18n.language}/conditions`);
+      .post(url, {
+        ...values,
+        phone: `+${values?.phone}`,
+        country: selectedCountry?.label,
+        gender: selectedGender?.label,
+        sector: selectedSector?.label,
+      })
+      .then((res) => {
+        if (isSpeaker) {
+          nav(`/${i18n.language}/conditions`);
+        } else {
+          if (res.status === 200) {
+            setSuccessModal(true);
+            resetForm();
+          } else {
+            setFailedModal(true);
+            resetForm();
+          }
+        }
         resetForm();
       })
       .catch(() => {
         toast.error(t("common.submit_error"));
         throw new Error("Unexpected response");
       });
+  };
+
+  const customStyles = {
+    control: (provided) => ({
+      ...provided,
+      backgroundColor: "white",
+      borderColor: "#e5e7eb",
+      borderRadius: "8px",
+      padding: "1.5px",
+      boxShadow: "none",
+      fontWeight: "600",
+    }),
+    placeholder: (provided) => ({
+      ...provided,
+      color: "#013047a8",
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: state.isSelected ? "#013047" : "white",
+      color: state.isSelected ? "white" : "#013047",
+      "&:hover": {
+        backgroundColor: "#013047",
+        color: "white",
+      },
+    }),
+    menu: (provided) => ({
+      ...provided,
+      zIndex: 10,
+    }),
   };
 
   return (
@@ -57,163 +192,369 @@ const RegistrationForm = ({ fromRegister }) => {
       }`}
       dir={i18n.language === "en" ? "ltr" : "rtl"}
     >
+      <SuccessModal tog_modal={tog_modal} successModal={successModal} />
+      <FailedModal
+        tog_failed_modal={tog_failed_modal}
+        failedModal={failedModal}
+      />
+      <div
+        data-aos="fade-left"
+        data-aos-duration="500"
+        className=" transition-opacity"
+      >
+        {policyModal && (
+          <div
+            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+            onClick={() => {
+              tog_policy_modal();
+            }}
+          >
+            <div
+              className="bg-white rounded-lg shadow-lg p-6 md:w-[500px] w-[85%] text-center relative text-text"
+              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+            >
+              <p
+                className={`text-lg cursor-pointer -mt-4 ${
+                  i18n.language == "en" ? "text-left" : "text-right"
+                }`}
+                onClick={() => {
+                  tog_policy_modal();
+                }}
+              >
+                x
+              </p>
+              <p className="text-base font-bold mb-2">
+                {t("registrationForm.privacy_policy")}
+              </p>
+              <p className="text-[10px] text-justify">
+                {" "}
+                {t("registrationForm.privacy_policy_content")}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ setFieldValue, values }) => (
-          <Form className="w-full max-w-2xl mx-auto p-4">
-            <div className="flex flex-col mb-4">
-              <label>
-                {t("registrationForm.email")}
-                <span className="text-red-700 text-xl">*</span>
-              </label>
-              <Field
-                name="email"
-                type="email"
-                placeholder={t("registrationForm.emailPlaceholder")}
-                className="w-full bg-gray-100 rounded-lg border border-gray-200 outline-none p-2"
-              />
-              <ErrorMessage
-                name="email"
-                component="div"
-                className="text-red-500 text-sm"
-              />
-            </div>
+        {({ setFieldValue, values, setFieldValues }) => (
+          <Form className="w-full mx-auto p-4 relative">
+            {isExhibitor ? (
+              <div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                  <div className="flex flex-col">
+                    <Field
+                      name="first_name"
+                      placeholder={t("registrationForm.firstNamePlaceholder")}
+                      className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                    />
+                    <ErrorMessage
+                      name="first_name"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
-              <div className="flex flex-col">
-                <label>
-                  {t("registrationForm.firstName")}
-                  <span className="text-red-700 text-xl">*</span>
-                </label>
-                <Field
-                  name="first_name"
-                  placeholder={t("registrationForm.firstNamePlaceholder")}
-                  className="w-full bg-gray-100 rounded-lg border border-gray-200 outline-none p-2"
-                />
-                <ErrorMessage
-                  name="first_name"
-                  component="div"
-                  className="text-red-500 text-sm"
-                />
+                  <div className="flex flex-col">
+                    <Field
+                      name="last_name"
+                      placeholder={t("registrationForm.lastNamePlaceholder")}
+                      className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                    />
+                    <ErrorMessage
+                      name="last_name"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col mb-4">
+                  <Field
+                    name="email"
+                    type="email"
+                    placeholder={t("registrationForm.emailPlaceholder")}
+                    className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="text-red-500 text-sm"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                  <div className="flex flex-col" dir="rtl">
+                    <PhoneInput
+                      country="sa"
+                      value={values.phone}
+                      onChange={(phone) => setFieldValue("phone", phone)}
+                      inputProps={{
+                        name: "phone",
+                        id: "phone",
+                        className:
+                          "border-[1.5px] px-2 py-[9px]  w-full bg-white  rounded-lg border border-gray-200 phone-input-handle",
+                        placeholder: t("registrationForm.phone"),
+                      }}
+                      dropdownClass="custom-phone-dropdown"
+                    />
+                    <ErrorMessage
+                      name="phone"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <Field
+                      name="website_url"
+                      placeholder={t("registrationForm.websiteUrlPlaceholder")}
+                      className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                  <div className="flex flex-col">
+                    <Field
+                      name="job_title"
+                      placeholder={t("registrationForm.jobTitlePlaceholder")}
+                      className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                    />
+                    <ErrorMessage
+                      name="job_title"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <Field
+                      name="company"
+                      placeholder={t("registrationForm.companyPlaceholder")}
+                      className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                    />
+                    <ErrorMessage
+                      name="company"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col mb-4">
+                  <Field
+                    as="textarea"
+                    name="message"
+                    placeholder={t("registrationForm.messagePlaceholder")}
+                    rows="4"
+                    className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                  />
+                </div>
+
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="px-6 py-2 bg-text hover:bg-text_hover text-white rounded-lg"
+                  >
+                    {t("registrationForm.submit")}
+                  </button>
+                </div>
               </div>
+            ) : null}
+            {isVisitor || isSpeaker ? (
+              <div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                  <div className="flex flex-col">
+                    <Field
+                      name="first_name"
+                      placeholder={t("registrationForm.firstNamePlaceholder")}
+                      className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                    />
+                    <ErrorMessage
+                      name="first_name"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
 
-              <div className="flex flex-col">
-                <label>
-                  {t("registrationForm.lastName")}
-                  <span className="text-red-700 text-xl">*</span>
-                </label>
-                <Field
-                  name="last_name"
-                  placeholder={t("registrationForm.lastNamePlaceholder")}
-                  className="w-full bg-gray-100 rounded-lg border border-gray-200 outline-none p-2"
-                />
-                <ErrorMessage
-                  name="last_name"
-                  component="div"
-                  className="text-red-500 text-sm"
-                />
+                  <div className="flex flex-col">
+                    <Field
+                      name="last_name"
+                      placeholder={t("registrationForm.lastNamePlaceholder")}
+                      className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                    />
+                    <ErrorMessage
+                      name="last_name"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                  <div className="flex flex-col mb-4">
+                    <Field
+                      name="email"
+                      type="email"
+                      placeholder={t("registrationForm.emailPlaceholder")}
+                      className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                    />
+                    <ErrorMessage
+                      name="email"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                  <div className="flex flex-col" dir="rtl">
+                    <PhoneInput
+                      country="sa"
+                      value={values.phone}
+                      onChange={(phone) => setFieldValue("phone", phone)}
+                      inputProps={{
+                        name: "phone",
+                        id: "phone",
+                        className:
+                          "border-[1.5px] px-2 py-[9px]  w-full bg-white  rounded-lg border border-gray-200 phone-input-handle",
+                        placeholder: t("registrationForm.phone"),
+                      }}
+                      dropdownClass="custom-phone-dropdown"
+                    />
+                    <ErrorMessage
+                      name="phone"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                  <div className="flex flex-col">
+                    <Field
+                      name="job_title"
+                      placeholder={t("registrationForm.jobTitlePlaceholder")}
+                      className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                    />
+                    <ErrorMessage
+                      name="job_title"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <Field
+                      name="company"
+                      placeholder={t("registrationForm.companyPlaceholder")}
+                      className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                    />
+                    <ErrorMessage
+                      name="company"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                  <div className="flex flex-col">
+                    <Select
+                      options={genderOptions}
+                      onChange={handleGenderChange}
+                      placeholder={t("registrationForm.gender")}
+                      isSearchable
+                      styles={customStyles}
+                      className="w-full mx-auto py-[1px]"
+                    />
+                    <ErrorMessage
+                      name="country"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <Select
+                      options={sectorOptions}
+                      onChange={handleSectorChange}
+                      placeholder={t("registrationForm.sector")}
+                      isSearchable
+                      styles={customStyles}
+                      className="w-full mx-auto py-[1px]"
+                    />
+                    <ErrorMessage
+                      name="country"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                  <div className="flex flex-col">
+                    <Select
+                      options={countryOptions}
+                      onChange={handleCountryChange}
+                      placeholder={t("registrationForm.country")}
+                      isSearchable
+                      styles={customStyles}
+                      className="w-full mx-auto py-[1px]"
+                    />
+                    <ErrorMessage
+                      name="country"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <Field
+                      name="city"
+                      placeholder={t("registrationForm.city")}
+                      className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                    />
+                    <ErrorMessage
+                      name="city"
+                      component="div"
+                      className="text-red-500 text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col mb-4">
+                  <Field
+                    as="textarea"
+                    name="message"
+                    placeholder={t("registrationForm.messagePlaceholder")}
+                    rows="4"
+                    className="w-full bg-white rounded-lg border border-gray-200 outline-none p-2 placeholder:text-[#013047a8] font-semibold"
+                  />
+                </div>
+
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={handleCheckboxChange}
+                    className="tracking-wide cursor-pointer"
+                    required
+                  />
+                  <span className="mx-[6px] tracking-normal">
+                    {t("registrationForm.accept")}
+                  </span>{" "}
+                  <div
+                    onClick={tog_policy_modal}
+                    className="text-text underline tracking-normal cursor-pointer"
+                  >
+                    {t("registrationForm.terms")}
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="px-6 py-2 bg-text hover:bg-text_hover text-white rounded-lg"
+                  >
+                    {t("registrationForm.submit")}
+                  </button>
+                </div>
               </div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
-              <div className="flex flex-col">
-                <label>
-                  {t("registrationForm.company")}
-                  <span className="text-red-700 text-xl">*</span>
-                </label>
-                <Field
-                  name="company"
-                  placeholder={t("registrationForm.companyPlaceholder")}
-                  className="w-full bg-gray-100 rounded-lg border border-gray-200 outline-none p-2"
-                />
-                <ErrorMessage
-                  name="company"
-                  component="div"
-                  className="text-red-500 text-sm"
-                />
-              </div>
-
-              <div className="flex flex-col">
-                <label>
-                  {t("registrationForm.jobTitle")}
-                  <span className="text-red-700 text-xl">*</span>
-                </label>
-                <Field
-                  name="job_title"
-                  placeholder={t("registrationForm.jobTitlePlaceholder")}
-                  className="w-full bg-gray-100 rounded-lg border border-gray-200 outline-none p-2"
-                />
-                <ErrorMessage
-                  name="job_title"
-                  component="div"
-                  className="text-red-500 text-sm"
-                />
-              </div>
-            </div>
-
-            <div
-              className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4"
-              dir={i18n.language == "en" ? "ltr" : "rtl"}
-            >
-              <div className="flex flex-col">
-                <label>{t("registrationForm.websiteUrl")}</label>
-                <Field
-                  name="website_url"
-                  placeholder={t("registrationForm.websiteUrlPlaceholder")}
-                  className="w-full bg-gray-100 rounded-lg border border-gray-200 outline-none p-2"
-                />
-              </div>
-
-              <div className="flex flex-col" dir="rtl">
-                <label>
-                  {t("registrationForm.phone")}
-                  <span className="text-red-700 text-xl">*</span>
-                </label>
-                <PhoneInput
-                  country="sa"
-                  value={values.phone}
-                  onChange={(phone) => setFieldValue("phone", phone)}
-                  inputProps={{
-                    name: "phone",
-                    id: "phone",
-                    className:
-                      "border-[1.5px] px-2 py-[9px]  w-full bg-white bg-gray-100 rounded-lg border border-gray-200 phone-input-handle",
-                    placeholder: t("registrationForm.phone"),
-                  }}
-                  dropdownClass="custom-phone-dropdown"
-                />
-                <ErrorMessage
-                  name="phone"
-                  component="div"
-                  className="text-red-500 text-sm"
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-col mb-4">
-              <label>{t("registrationForm.message")}</label>
-              <Field
-                as="textarea"
-                name="message"
-                placeholder={t("registrationForm.messagePlaceholder")}
-                rows="4"
-                className="w-full bg-gray-100 rounded-lg border border-gray-200 outline-none p-2"
-              />
-            </div>
-
-            <div className="text-center">
-              <button
-                type="submit"
-                className="px-6 py-2 bg-[#44add2] text-white rounded-lg hover:bg-[#319cc4] disabled:bg-gray-400 disabled:cursor-not-allowed"
-                disabled={fromRegister && true} // Set this to true or false based on your condition
-                style={{ cursor: `${fromRegister && "not-allowed"}` }} // Changes the cursor to 'not-allowed'
-              >
-                {t("registrationForm.submit")}
-              </button>
-            </div>
+            ) : null}
           </Form>
         )}
       </Formik>

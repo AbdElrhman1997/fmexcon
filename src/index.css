@@ -47,7 +47,11 @@ html {
 /* Firefox Scrollbar Styles */
 html {
   scrollbar-width: thin;
-  scrollbar-color: #005ea1 #f1f1f1;
+  scrollbar-color: #013047 #f1f1f1;
+}
+
+#header {
+  z-index: 1000;
 }
 
 .arrow {
@@ -73,4 +77,19 @@ html {
 }
 .phone-input-handle:focus {
   outline: none;
+}
+iframe {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.logo_sfma {
+  height: 7.5rem;
+}
+
+@media (max-width: 768px) {
+  .logo_sfma {
+    height: 100px;
+  }
 }

@@ -1,20 +1,50 @@
-import React from "react";
-import aboutImage from "../Images/aboutImage.png";
-import about_image1 from "../Images/about-image1.png";
-import about_image2 from "../Images/about-image2.png";
-import about_image3 from "../Images/about-image3.png";
+import React, { useEffect, useState } from "react";
 import GetNewUpdates from "../Components/GetNewUpdates/GetNewUpdates";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import RegisterWithUsImage from "../Images/RegisterWithUs.png";
-import { Link } from "react-router-dom";
+import DontMissBanner from "../Components/DontMissBanner";
 
 const About = () => {
   const { t, i18n } = useTranslation();
+  const words_ar = ["تتعرف", "تطلع", "تستفيد"]; // Arabic words
+  const words_en = ["Learn", "Discover", "Benefit"]; // English words
+
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [displayedWord, setDisplayedWord] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(200); // Typing speed in ms
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const currentWords = i18n.language === "en" ? words_en : words_ar;
+      const currentWord = currentWords[currentWordIndex];
+
+      if (!isDeleting) {
+        // Typing the word
+        setDisplayedWord((prev) => currentWord.slice(0, prev.length + 1));
+        if (displayedWord === currentWord) {
+          setTimeout(() => setIsDeleting(true), 1000); // Pause before deleting
+        }
+      } else {
+        // Deleting the word
+        setDisplayedWord((prev) => prev.slice(0, -1));
+        if (displayedWord === "") {
+          setIsDeleting(false);
+          setCurrentWordIndex(
+            (prevIndex) => (prevIndex + 1) % currentWords.length
+          ); // Move to the next word
+        }
+      }
+    };
+
+    const typingTimer = setTimeout(handleTyping, isDeleting ? 50 : typingSpeed);
+
+    return () => clearTimeout(typingTimer);
+  }, [displayedWord, isDeleting, currentWordIndex, i18n.language, typingSpeed]);
 
   return (
     <section
-      className={`min-h-[calc(100vh - 64px)] grid grid-cols-12 gap-5 ${
+      className={`min-h-[calc(100vh - 64px)] grid grid-cols-12 ${
         i18n.language === "en" ? "text-left" : "text-right"
       }`}
       dir={i18n.language === "en" ? "ltr" : "rtl"}
@@ -22,152 +52,110 @@ const About = () => {
       <Helmet>
         <title>{t("about.title")}</title>
       </Helmet>
-      <div className="lg:col-span-12 col-span-12 back-ground text-center">
+      <div className="lg:col-span-12 col-span-12 back-ground h-[65vh] ">
         <img
-          src={aboutImage}
-          className="about-img col-span-12"
+          src="/images/banner_bg.webp"
+          className="about-img col-span-12 h-[500px]"
           alt={t("about.aboutImageAlt")}
         />
-        <div className="text">
-          <h3>{t("about.title")}</h3>
+        <div
+          className={`text text-center container mx-auto md:flex justify-between ${
+            i18n.language === "en" ? "md:text-left" : "md:text-right"
+          }`}
+        >
+          <h3 className="md:text-[50px] text-[44px] font-bold leading-relaxed">
+            {t("about.with_us")}{" "}
+            <span className="md:inline block">
+              {" "}
+              <span className="text-[#35E8EE]">{displayedWord}</span>
+              <span className="cursor">|</span>
+            </span>
+          </h3>
           <a
             href="https://sfma.sa"
+            className="md:text-[20px] text-lg font-medium leading-relaxed text-white md:translate-y-16 translate-y-5 md:inline inline-block hover:text-main md:opacity-90"
             target="_blank"
-            className="mt-6 text-white block"
           >
-            {t("about.poweredBy")}
+            {t("Powered by SFMA")}
           </a>
         </div>
       </div>
 
-      <div className="col-span-12">
-        <div className="lg:grid md:grid grid-cols-12 px-16 mt-16 mb-10">
-          <div className="lg:col-span-3 md:col-span-3 col-span-12 my-auto">
-            <p
-              style={{
-                color: "rgb(68, 173, 210)",
-                fontWeight: "bold",
-                fontSize: "20px",
-              }}
-            >
-              {t("about.aboutUs")}
-            </p>
-            <p
-              style={{
-                color: "rgb(16, 55, 131)",
-                fontWeight: "bold",
-                fontSize: "24px",
-              }}
-            >
-              {t("about.aboutExpo")}
-            </p>
-          </div>
-
-          <div className="lg:col-span-9 md:col-span-9 col-span-12">
-            <p className="text-sm leading-loose text-justify">
+      <div className="col-span-12 container mx-auto md:my-16 my-10">
+        <p className="text-3xl font-bold text-text mb-2">
+          {t("about.aboutExpo")}
+        </p>
+        <div className="lg:grid md:grid grid-cols-12 ">
+          <div className="md:col-span-8 col-span-12">
+            <p className="text-base leading-relaxed text-justify font-semibold">
               {t("about.description")}
             </p>
           </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-x-8 col-span-12 px-16">
-        <div className="card text-center p-4">
-          <img
-            src={about_image1}
-            alt={t("about.card1ImageAlt")}
-            className="mx-auto mb-4 w-24 h-24 object-cover"
-          />
-          <h2
-            className="text-lg font-semibold mb-2"
-            style={{ color: "rgb(68, 173, 210)" }}
-          >
-            {t("about.card1Title")}
-          </h2>
-          <p style={{ color: "rgb(2, 48, 71)", textAlign: "justify" }}>
-            {t("about.card1Description")}
-          </p>
-        </div>
-
-        <div className="card text-center p-4">
-          <img
-            src={about_image2}
-            alt={t("about.card2ImageAlt")}
-            className="mx-auto mb-4 w-24 h-24 object-cover"
-          />
-          <h2
-            className="text-lg font-semibold mb-2"
-            style={{ color: "rgb(68, 173, 210)" }}
-          >
-            {t("about.card2Title")}
-          </h2>
-          <p style={{ color: "rgb(2, 48, 71)", textAlign: "justify" }}>
-            {t("about.card2Description")}
-          </p>
-        </div>
-
-        <div className="card text-center p-4">
-          <img
-            src={about_image3}
-            alt={t("about.card3ImageAlt")}
-            className="mx-auto mb-4 w-24 h-24 object-cover"
-          />
-          <h2
-            className="text-lg font-semibold mb-2"
-            style={{ color: "rgb(68, 173, 210)" }}
-          >
-            {t("about.card3Title")}
-          </h2>
-          <p style={{ color: "rgb(2, 48, 71)", textAlign: "justify" }}>
-            {t("about.card3Description")}
-          </p>
-        </div>
-      </div>
-
-      <div className="col-span-12">
-        <section
-          className="register-with-us my-8 lg:px-16 md:px-16 px-5 py-16"
-          dir={i18n.language === "en" ? "ltr" : "rtl"}
-        >
-          <div className="lg:grid md:grid grid-cols-12">
-            <div className="lg:col-span-6 md:col-span-6 col-span-12 my-auto mb-12">
-              <p
-                className="text-2xl"
-                style={{ color: "rgb(68, 173, 210)", fontWeight: "bold" }}
-              >
-                {t("about.dontMissOut")}
-              </p>
-              <p className="mt-2 mb-8 text-3xl lg:w-96 lg:leading-relaxed md:leading-relaxed leading-10">
-                {t("about.boostYourBrand")}
-              </p>
-              <div className="flex justify-start lg:-translate-x-0 md:-translate-x-0 -translate-x-5">
-                <button className="btn-register col-span-12 lg:block md:block flex justify-center p-0">
-                  <a href="/ar/register#ConferanceLogin">
-                    {t("about.registerWithUs")}
-                  </a>
-                </button>
-                <button className="btn-view h-fit my-auto p-0">
-                  <Link
-                    to={
-                      i18n.language === "en"
-                        ? `/en/sponsores#sponserForm`
-                        : `/ar/sponsores#sponserForm`
-                    }
-                  >
-                    {t("about.exhibitWithUs")}
-                  </Link>
-                </button>
-              </div>
-            </div>
-            <div className="lg:col-span-6 md:col-span-6 col-span-12 mx-2">
-              <img
-                src={RegisterWithUsImage}
-                className="mx-auto w-full my-4"
-                alt={t("about.ministerImageAlt")}
-              />
-            </div>
+          <div className="md:col-span-4 col-span-12 my-auto md:mt-0 mt-12 h-full flex md:justify-end justify-center items-center">
+            <img
+              src="/images/Logo-Header.png"
+              className="md:h-32 h-28"
+              alt="Logo"
+            />
           </div>
-        </section>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-x-8 col-span-12 container mx-auto">
+        <div className="card text-center p-4">
+          <div className="bg-text rounded-2xl py-12">
+            <img
+              src="/images/about_1.png"
+              alt={t("about.card1ImageAlt")}
+              className="mx-auto mb-4 w-16 h-16 object-cover"
+            />
+            <h2 className="text-2xl mb-2 text-white font-bold">
+              {t("about.card3Title")}
+            </h2>
+          </div>
+
+          {/* <p style={{ color: "rgb(2, 48, 71)", textAlign: "justify" }}>
+            {t("about.card3Description")}
+          </p> */}
+        </div>
+
+        <div className="card text-center p-4">
+          <div className="bg-text rounded-2xl py-12">
+            <img
+              src="/images/about_2.png"
+              alt={t("about.card2ImageAlt")}
+              className="mx-auto mb-4 w-16 h-16 object-cover"
+            />
+            <h2 className="text-2xl mb-2 text-white font-bold">
+              {t("about.card2Title")}
+            </h2>
+          </div>
+
+          {/* <p style={{ color: "rgb(2, 48, 71)", textAlign: "justify" }}>
+            {t("about.card2Description")}
+          </p> */}
+        </div>
+
+        <div className="card text-center p-4">
+          <div className="bg-text rounded-2xl py-12">
+            <img
+              src="/images/about_3.png"
+              alt={t("about.card1ImageAlt")}
+              className="mx-auto mb-4 w-16 h-16 object-cover"
+            />
+            <h2 className="text-2xl mb-2 text-white font-bold">
+              {t("about.card1Title")}
+            </h2>
+          </div>
+
+          {/* <p style={{ color: "rgb(2, 48, 71)", textAlign: "justify" }}>
+            {t("about.card1Description")}
+          </p> */}
+        </div>
+      </div>
+
+      <div className="col-span-12 ">
+        <DontMissBanner />
       </div>
 
       <div className="col-span-12">

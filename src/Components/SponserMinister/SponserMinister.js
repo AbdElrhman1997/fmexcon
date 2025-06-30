@@ -2,7 +2,7 @@ import React from "react";
 import "./SponserMinister.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import ministerImage from "../../Images/minister.png";
+// import ministerImage from "/images/minister.png";
 
 const SponserMinister = () => {
   const { t, i18n } = useTranslation();
@@ -13,13 +13,13 @@ const SponserMinister = () => {
       dir={i18n.language === "en" ? "ltr" : "rtl"}
     >
       <div className="lg:grid md:grid grid-cols-12 gap-6 ">
-        <div className="minister-watermark lg:col-span-6 md:col-span-6 col-span-12 lg:p-16 md:p-12 p-6 relative">
+        {/* <div className="minister-watermark lg:col-span-6 md:col-span-6 col-span-12 lg:p-16 md:p-12 p-6 relative">
           <img
             src={ministerImage}
             className=" mx-auto w-full"
             alt="minister_image"
           />
-        </div>
+        </div> */}
         <div className="lg:col-span-6 md:col-span-6 col-span-12 lg:p-16 md:p-12 px-6 lg:my-4 my-2 w-full h-full flex flex-col justify-center items-center lg:-mr-8">
           <p
             style={{

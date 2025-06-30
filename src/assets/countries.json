@@ -1,0 +1,424 @@
+[
+  {
+    "value": "Saudi Arabia",
+    "ar": "المملكة العربية السعودية",
+    "en": "Saudi Arabia"
+  },
+  { "value": "Afghanistan", "ar": "أفغانستان", "en": "Afghanistan" },
+  { "value": "Åland Islands", "ar": "جزر أولاند", "en": "Åland Islands" },
+  { "value": "Albania", "ar": "ألبانيا", "en": "Albania" },
+  { "value": "Algeria", "ar": "الجزائر", "en": "Algeria" },
+  {
+    "value": "American Samoa",
+    "ar": "ساموا الأمريكية",
+    "en": "American Samoa"
+  },
+  { "value": "Andorra", "ar": "أندورا", "en": "Andorra" },
+  { "value": "Angola", "ar": "أنغولا", "en": "Angola" },
+  { "value": "Anguilla", "ar": "أنغويلا", "en": "Anguilla" },
+  { "value": "Antarctica", "ar": "أنتاركتيكا", "en": "Antarctica" },
+  {
+    "value": "Antigua and Barbuda",
+    "ar": "أنتيغوا وباربودا",
+    "en": "Antigua and Barbuda"
+  },
+  { "value": "Argentina", "ar": "الأرجنتين", "en": "Argentina" },
+  { "value": "Armenia", "ar": "أرمينيا", "en": "Armenia" },
+  { "value": "Aruba", "ar": "أروبا", "en": "Aruba" },
+  { "value": "Australia", "ar": "أستراليا", "en": "Australia" },
+  { "value": "Austria", "ar": "النمسا", "en": "Austria" },
+  { "value": "Azerbaijan", "ar": "أذربيجان", "en": "Azerbaijan" },
+  { "value": "Bahamas", "ar": "الباهاماس", "en": "Bahamas" },
+  { "value": "Bahrain", "ar": "البحرين", "en": "Bahrain" },
+  { "value": "Bangladesh", "ar": "بنغلاديش", "en": "Bangladesh" },
+  { "value": "Barbados", "ar": "بربادوس", "en": "Barbados" },
+  { "value": "Belarus", "ar": "بيلاروسيا", "en": "Belarus" },
+  { "value": "Belgium", "ar": "بلجيكا", "en": "Belgium" },
+  { "value": "Belize", "ar": "بليز", "en": "Belize" },
+  { "value": "Benin", "ar": "بنين", "en": "Benin" },
+  { "value": "Bermuda", "ar": "برمودا", "en": "Bermuda" },
+  { "value": "Bhutan", "ar": "بوتان", "en": "Bhutan" },
+  { "value": "Bolivia", "ar": "بوليفيا", "en": "Bolivia" },
+  {
+    "value": "Bosnia and Herzegovina",
+    "ar": "البوسنة والهرسك",
+    "en": "Bosnia and Herzegovina"
+  },
+  { "value": "Botswana", "ar": "بوتسوانا", "en": "Botswana" },
+  { "value": "Bouvet Island", "ar": "جزيرة بوفو", "en": "Bouvet Island" },
+  { "value": "Brazil", "ar": "البرازيل", "en": "Brazil" },
+  {
+    "value": "British Indian Ocean Territory",
+    "ar": "إقليم المحيط الهندي البريطاني",
+    "en": "British Indian Ocean Territory"
+  },
+  {
+    "value": "Brunei Darussalam",
+    "ar": "بروناي دار السلام",
+    "en": "Brunei Darussalam"
+  },
+  { "value": "Bulgaria", "ar": "بلغاريا", "en": "Bulgaria" },
+  { "value": "Burkina Faso", "ar": "بوركينا فاسو", "en": "Burkina Faso" },
+  { "value": "Burundi", "ar": "بوروندي", "en": "Burundi" },
+  { "value": "Cambodia", "ar": "كمبوديا", "en": "Cambodia" },
+  { "value": "Cameroon", "ar": "الكاميرون", "en": "Cameroon" },
+  { "value": "Canada", "ar": "كندا", "en": "Canada" },
+  { "value": "Cape Verde", "ar": "الرأس الأخضر", "en": "Cape Verde" },
+  { "value": "Cayman Islands", "ar": "جزر كايمان", "en": "Cayman Islands" },
+  {
+    "value": "Central African Republic",
+    "ar": "جمهورية أفريقيا الوسطى",
+    "en": "Central African Republic"
+  },
+  { "value": "Chad", "ar": "تشاد", "en": "Chad" },
+  { "value": "Chile", "ar": "تشيلي", "en": "Chile" },
+  { "value": "China", "ar": "الصين", "en": "China" },
+  {
+    "value": "Christmas Island",
+    "ar": "جزيرة الكريسماس",
+    "en": "Christmas Island"
+  },
+  {
+    "value": "Cocos (Keeling) Islands",
+    "ar": "جزر كوكوس (كيلينغ)",
+    "en": "Cocos (Keeling) Islands"
+  },
+  { "value": "Colombia", "ar": "كولومبيا", "en": "Colombia" },
+  { "value": "Comoros", "ar": "جزر القمر", "en": "Comoros" },
+  { "value": "Congo", "ar": "الكونغو", "en": "Congo" },
+  {
+    "value": "Congo, The Democratic Republic of the",
+    "ar": "الكونغو، جمهورية الكونغو الديمقراطية",
+    "en": "Congo, The Democratic Republic of the"
+  },
+  { "value": "Cook Islands", "ar": "جزر كوك", "en": "Cook Islands" },
+  { "value": "Costa Rica", "ar": "كوستاريكا", "en": "Costa Rica" },
+  { "value": "Cote D'Ivoire", "ar": "كوت ديفوار", "en": "Cote D'Ivoire" },
+  { "value": "Croatia", "ar": "كرواتيا", "en": "Croatia" },
+  { "value": "Cuba", "ar": "كوبا", "en": "Cuba" },
+  { "value": "Cyprus", "ar": "قبرص", "en": "Cyprus" },
+  { "value": "Czech Republic", "ar": "جمهورية التشيك", "en": "Czech Republic" },
+  { "value": "Denmark", "ar": "الدنمارك", "en": "Denmark" },
+  { "value": "Djibouti", "ar": "جيبوتي", "en": "Djibouti" },
+  { "value": "Dominica", "ar": "دومينيكا", "en": "Dominica" },
+  {
+    "value": "Dominican Republic",
+    "ar": "جمهورية الدومينيكان",
+    "en": "Dominican Republic"
+  },
+  { "value": "Ecuador", "ar": "الإكوادور", "en": "Ecuador" },
+  { "value": "Egypt", "ar": "مصر", "en": "Egypt" },
+  { "value": "El Salvador", "ar": "السلفادور", "en": "El Salvador" },
+  {
+    "value": "Equatorial Guinea",
+    "ar": "غينيا الاستوائية",
+    "en": "Equatorial Guinea"
+  },
+  { "value": "Eritrea", "ar": "إريتريا", "en": "Eritrea" },
+  { "value": "Estonia", "ar": "إستونيا", "en": "Estonia" },
+  { "value": "Ethiopia", "ar": "إثيوبيا", "en": "Ethiopia" },
+  {
+    "value": "Falkland Islands (Malvinas)",
+    "ar": "جزر فوكلاند (مالفيناس)",
+    "en": "Falkland Islands (Malvinas)"
+  },
+  { "value": "Faroe Islands", "ar": "جزر فارو", "en": "Faroe Islands" },
+  { "value": "Fiji", "ar": "فيجي", "en": "Fiji" },
+  { "value": "Finland", "ar": "فنلندا", "en": "Finland" },
+  { "value": "France", "ar": "فرنسا", "en": "France" },
+  { "value": "French Guiana", "ar": "غويانا الفرنسية", "en": "French Guiana" },
+  {
+    "value": "French Polynesia",
+    "ar": "بولينيزيا الفرنسية",
+    "en": "French Polynesia"
+  },
+  {
+    "value": "French Southern Territories",
+    "ar": "الأراضي الجنوبية الفرنسية",
+    "en": "French Southern Territories"
+  },
+  { "value": "Gabon", "ar": "الغابون", "en": "Gabon" },
+  { "value": "Gambia", "ar": "غامبيا", "en": "Gambia" },
+  { "value": "Georgia", "ar": "جورجيا", "en": "Georgia" },
+  { "value": "Germany", "ar": "ألمانيا", "en": "Germany" },
+  { "value": "Ghana", "ar": "غانا", "en": "Ghana" },
+  { "value": "Gibraltar", "ar": "جبل طارق", "en": "Gibraltar" },
+  { "value": "Greece", "ar": "اليونان", "en": "Greece" },
+  { "value": "Greenland", "ar": "غرينلاند", "en": "Greenland" },
+  { "value": "Grenada", "ar": "غرينادا", "en": "Grenada" },
+  { "value": "Guadeloupe", "ar": "غوادلوب", "en": "Guadeloupe" },
+  { "value": "Guam", "ar": "غوام", "en": "Guam" },
+  { "value": "Guatemala", "ar": "غواتيمالا", "en": "Guatemala" },
+  { "value": "Guernsey", "ar": "غيرنسي", "en": "Guernsey" },
+  { "value": "Guinea", "ar": "غينيا", "en": "Guinea" },
+  { "value": "Guinea-Bissau", "ar": "غينيا بيساو", "en": "Guinea-Bissau" },
+  { "value": "Guyana", "ar": "غيانا", "en": "Guyana" },
+  { "value": "Haiti", "ar": "هايتي", "en": "Haiti" },
+  {
+    "value": "Heard Island and Mcdonald Islands",
+    "ar": "جزيرة هيرد وجزر ماكدونالد",
+    "en": "Heard Island and Mcdonald Islands"
+  },
+  {
+    "value": "Holy See (Vatican City State)",
+    "ar": "الكرسي الرسولي (دولة الفاتيكان)",
+    "en": "Holy See (Vatican City State)"
+  },
+  { "value": "Honduras", "ar": "هندوراس", "en": "Honduras" },
+  { "value": "Hong Kong", "ar": "هونغ كونغ", "en": "Hong Kong" },
+  { "value": "Hungary", "ar": "هنغاريا", "en": "Hungary" },
+  { "value": "Iceland", "ar": "آيسلندا", "en": "Iceland" },
+  { "value": "India", "ar": "الهند", "en": "India" },
+  { "value": "Indonesia", "ar": "إندونيسيا", "en": "Indonesia" },
+  { "value": "Iran", "ar": "إيران", "en": "Iran" },
+  { "value": "Iraq", "ar": "العراق", "en": "Iraq" },
+  { "value": "Ireland", "ar": "أيرلندا", "en": "Ireland" },
+  { "value": "Isle of Man", "ar": "جزيرة مان", "en": "Isle of Man" },
+  { "value": "Italy", "ar": "إيطاليا", "en": "Italy" },
+  { "value": "Jamaica", "ar": "جامايكا", "en": "Jamaica" },
+  { "value": "Japan", "ar": "اليابان", "en": "Japan" },
+  { "value": "Jersey", "ar": "جيرسي", "en": "Jersey" },
+  { "value": "Jordan", "ar": "الأردن", "en": "Jordan" },
+  { "value": "Kazakhstan", "ar": "كازاخستان", "en": "Kazakhstan" },
+  { "value": "Kenya", "ar": "كينيا", "en": "Kenya" },
+  { "value": "Kiribati", "ar": "كيريباس", "en": "Kiribati" },
+  {
+    "value": "Korea, Democratic People's Republic of",
+    "ar": "كوريا الشمالية",
+    "en": "Korea, Democratic People's Republic of"
+  },
+  {
+    "value": "Korea, Republic of",
+    "ar": "كوريا الجنوبية",
+    "en": "Korea, Republic of"
+  },
+  { "value": "Kuwait", "ar": "الكويت", "en": "Kuwait" },
+  { "value": "Kyrgyzstan", "ar": "قيرغيزستان", "en": "Kyrgyzstan" },
+  {
+    "value": "Lao People's Democratic Republic",
+    "ar": "لاوس",
+    "en": "Lao People's Democratic Republic"
+  },
+  { "value": "Latvia", "ar": "لاتفيا", "en": "Latvia" },
+  { "value": "Lebanon", "ar": "لبنان", "en": "Lebanon" },
+  { "value": "Lesotho", "ar": "ليسوتو", "en": "Lesotho" },
+  { "value": "Liberia", "ar": "ليبيريا", "en": "Liberia" },
+  { "value": "Libya", "ar": "ليبيا", "en": "Libya" },
+  { "value": "Liechtenstein", "ar": "ليختنشتاين", "en": "Liechtenstein" },
+  { "value": "Lithuania", "ar": "ليتوانيا", "en": "Lithuania" },
+  { "value": "Luxembourg", "ar": "لوكسمبورغ", "en": "Luxembourg" },
+  { "value": "Macao", "ar": "ماكاو", "en": "Macao" },
+  { "value": "Madagascar", "ar": "مدغشقر", "en": "Madagascar" },
+  { "value": "Malawi", "ar": "مالاوي", "en": "Malawi" },
+  { "value": "Malaysia", "ar": "ماليزيا", "en": "Malaysia" },
+  { "value": "Maldives", "ar": "المالديف", "en": "Maldives" },
+  { "value": "Mali", "ar": "مالي", "en": "Mali" },
+  { "value": "Malta", "ar": "مالطا", "en": "Malta" },
+  {
+    "value": "Marshall Islands",
+    "ar": "جزر مارشال",
+    "en": "Marshall Islands"
+  },
+  { "value": "Martinique", "ar": "مارتينيك", "en": "Martinique" },
+  { "value": "Mauritania", "ar": "موريتانيا", "en": "Mauritania" },
+  { "value": "Mauritius", "ar": "موريشيوس", "en": "Mauritius" },
+  { "value": "Mayotte", "ar": "مايوت", "en": "Mayotte" },
+  { "value": "Mexico", "ar": "المكسيك", "en": "Mexico" },
+  {
+    "value": "Micronesia (Federated States of)",
+    "ar": "ميكرونيزيا (دول فيدرالية)",
+    "en": "Micronesia (Federated States of)"
+  },
+  {
+    "value": "Moldova (Republic of)",
+    "ar": "مولدوفا (جمهورية)",
+    "en": "Moldova (Republic of)"
+  },
+  { "value": "Monaco", "ar": "موناكو", "en": "Monaco" },
+  { "value": "Mongolia", "ar": "منغوليا", "en": "Mongolia" },
+  { "value": "Montenegro", "ar": "مونتينيغرو", "en": "Montenegro" },
+  { "value": "Montserrat", "ar": "مونتسيرات", "en": "Montserrat" },
+  { "value": "Morocco", "ar": "المغرب", "en": "Morocco" },
+  { "value": "Mozambique", "ar": "موزمبيق", "en": "Mozambique" },
+  { "value": "Myanmar", "ar": "ميانمار", "en": "Myanmar" },
+  { "value": "Namibia", "ar": "ناميبيا", "en": "Namibia" },
+  { "value": "Nauru", "ar": "ناورو", "en": "Nauru" },
+  { "value": "Nepal", "ar": "نيبال", "en": "Nepal" },
+  { "value": "Netherlands", "ar": "هولندا", "en": "Netherlands" },
+  {
+    "value": "New Caledonia",
+    "ar": "كاليدونيا الجديدة",
+    "en": "New Caledonia"
+  },
+  { "value": "New Zealand", "ar": "نيوزيلندا", "en": "New Zealand" },
+  { "value": "Nicaragua", "ar": "نيكاراغوا", "en": "Nicaragua" },
+  { "value": "Niger", "ar": "النيجر", "en": "Niger" },
+  { "value": "Nigeria", "ar": "نيجيريا", "en": "Nigeria" },
+  { "value": "Niue", "ar": "نيوي", "en": "Niue" },
+  {
+    "value": "Norfolk Island",
+    "ar": "جزيرة نورفولك",
+    "en": "Norfolk Island"
+  },
+  {
+    "value": "Northern Mariana Islands",
+    "ar": "جزر ماريانا الشمالية",
+    "en": "Northern Mariana Islands"
+  },
+  { "value": "Norway", "ar": "النرويج", "en": "Norway" },
+  { "value": "Oman", "ar": "عمان", "en": "Oman" },
+  { "value": "Pakistan", "ar": "باكستان", "en": "Pakistan" },
+  { "value": "Palau", "ar": "بالاو", "en": "Palau" },
+  { "value": "Panama", "ar": "بنما", "en": "Panama" },
+  {
+    "value": "Papua New Guinea",
+    "ar": "بابوا غينيا الجديدة",
+    "en": "Papua New Guinea"
+  },
+  { "value": "Paraguay", "ar": "باراغواي", "en": "Paraguay" },
+  { "value": "Peru", "ar": "بيرو", "en": "Peru" },
+  { "value": "Philippines", "ar": "الفلبين", "en": "Philippines" },
+  { "value": "Pitcairn", "ar": "بيتكيرن", "en": "Pitcairn" },
+  { "value": "Poland", "ar": "بولندا", "en": "Poland" },
+  { "value": "Portugal", "ar": "البرتغال", "en": "Portugal" },
+  { "value": "Puerto Rico", "ar": "بورتو ريكو", "en": "Puerto Rico" },
+  { "value": "Qatar", "ar": "قطر", "en": "Qatar" },
+  { "value": "Romania", "ar": "رومانيا", "en": "Romania" },
+  {
+    "value": "Russian Federation",
+    "ar": "الاتحاد الروسي",
+    "en": "Russian Federation"
+  },
+  { "value": "Rwanda", "ar": "رواندا", "en": "Rwanda" },
+  { "value": "Réunion", "ar": "ريونيون", "en": "Réunion" },
+  {
+    "value": "Saint Barthélemy",
+    "ar": "سانت بارتيلمي",
+    "en": "Saint Barthélemy"
+  },
+  {
+    "value": "Saint Helena, Ascension and Tristan da Cunha",
+    "ar": "سانت هيلينا، أسينشين و تريستان دا كونا",
+    "en": "Saint Helena, Ascension and Tristan da Cunha"
+  },
+  {
+    "value": "Saint Kitts and Nevis",
+    "ar": "سانت كيتس ونيفيس",
+    "en": "Saint Kitts and Nevis"
+  },
+  { "value": "Saint Lucia", "ar": "سانت لوسيا", "en": "Saint Lucia" },
+  {
+    "value": "Saint Martin (French part)",
+    "ar": "سانت مارتين (الجزء الفرنسي)",
+    "en": "Saint Martin (French part)"
+  },
+  {
+    "value": "Saint Pierre and Miquelon",
+    "ar": "سانت بيير وميكلون",
+    "en": "Saint Pierre and Miquelon"
+  },
+  {
+    "value": "Saint Vincent and the Grenadines",
+    "ar": "سانت فنسنت والغرينادين",
+    "en": "Saint Vincent and the Grenadines"
+  },
+  { "value": "Samoa", "ar": "ساموا", "en": "Samoa" },
+  { "value": "San Marino", "ar": "سان مارينو", "en": "San Marino" },
+  {
+    "value": "Sao Tome and Principe",
+    "ar": "ساو تومي وبرينسيبي",
+    "en": "Sao Tome and Principe"
+  },
+  { "value": "Senegal", "ar": "السنغال", "en": "Senegal" },
+  { "value": "Serbia", "ar": "صربيا", "en": "Serbia" },
+  { "value": "Seychelles", "ar": "سيشيل", "en": "Seychelles" },
+  { "value": "Sierra Leone", "ar": "سيراليون", "en": "Sierra Leone" },
+  { "value": "Singapore", "ar": "سنغافورة", "en": "Singapore" },
+  {
+    "value": "Sint Maarten (Dutch part)",
+    "ar": "سينت مارتن (الجزء الهولندي)",
+    "en": "Sint Maarten (Dutch part)"
+  },
+  { "value": "Slovakia", "ar": "سلوفاكيا", "en": "Slovakia" },
+  { "value": "Slovenia", "ar": "سلوفينيا", "en": "Slovenia" },
+  { "value": "Solomon Islands", "ar": "جزر سولومون", "en": "Solomon Islands" },
+  { "value": "Somalia", "ar": "الصومال", "en": "Somalia" },
+  { "value": "South Africa", "ar": "جنوب أفريقيا", "en": "South Africa" },
+  {
+    "value": "South Georgia and the South Sandwich Islands",
+    "ar": "جورجيا الجنوبية وجزر ساندويتش الجنوبية",
+    "en": "South Georgia and the South Sandwich Islands"
+  },
+  { "value": "South Sudan", "ar": "جنوب السودان", "en": "South Sudan" },
+  { "value": "Spain", "ar": "إسبانيا", "en": "Spain" },
+  { "value": "Sri Lanka", "ar": "سريلانكا", "en": "Sri Lanka" },
+  { "value": "Sudan", "ar": "السودان", "en": "Sudan" },
+  { "value": "Suriname", "ar": "سورينام", "en": "Suriname" },
+  {
+    "value": "Svalbard and Jan Mayen",
+    "ar": "سفالبارد ويان ماين",
+    "en": "Svalbard and Jan Mayen"
+  },
+  { "value": "Sweden", "ar": "السويد", "en": "Sweden" },
+  { "value": "Switzerland", "ar": "سويسرا", "en": "Switzerland" },
+  {
+    "value": "Syrian Arab Republic",
+    "ar": "الجمهورية العربية السورية",
+    "en": "Syrian Arab Republic"
+  },
+  { "value": "Taiwan", "ar": "تايوان", "en": "Taiwan" },
+  { "value": "Tajikistan", "ar": "طاجيكستان", "en": "Tajikistan" },
+  {
+    "value": "Tanzania (United Republic of)",
+    "ar": "تنزانيا (جمهورية تنزانيا المتحدة)",
+    "en": "Tanzania (United Republic of)"
+  },
+  { "value": "Thailand", "ar": "تايلاند", "en": "Thailand" },
+  { "value": "Timor-Leste", "ar": "تيمور الشرقية", "en": "Timor-Leste" },
+  { "value": "Togo", "ar": "توغو", "en": "Togo" },
+  { "value": "Tokelau", "ar": "توكيلو", "en": "Tokelau" },
+  { "value": "Tonga", "ar": "تونغا", "en": "Tonga" },
+  {
+    "value": "Trinidad and Tobago",
+    "ar": "ترينيداد وتوباغو",
+    "en": "Trinidad and Tobago"
+  },
+  { "value": "Tunisia", "ar": "تونس", "en": "Tunisia" },
+  { "value": "Turkey", "ar": "تركيا", "en": "Turkey" },
+  { "value": "Turkmenistan", "ar": "تركمانستان", "en": "Turkmenistan" },
+  { "value": "Tuvalu", "ar": "توفالو", "en": "Tuvalu" },
+  { "value": "Uganda", "ar": "أوغندا", "en": "Uganda" },
+  { "value": "Ukraine", "ar": "أوكرانيا", "en": "Ukraine" },
+  {
+    "value": "United Arab Emirates",
+    "ar": "الإمارات العربية المتحدة",
+    "en": "United Arab Emirates"
+  },
+  {
+    "value": "United Kingdom of Great Britain and Northern Ireland",
+    "ar": "المملكة المتحدة لبريطانيا العظمى وأيرلندا الشمالية",
+    "en": "United Kingdom of Great Britain and Northern Ireland"
+  },
+  {
+    "value": "United States of America",
+    "ar": "الولايات المتحدة الأمريكية",
+    "en": "United States of America"
+  },
+  { "value": "Uruguay", "ar": "أوروغواي", "en": "Uruguay" },
+  { "value": "Uzbekistan", "ar": "أوزبكستان", "en": "Uzbekistan" },
+  { "value": "Vanuatu", "ar": "فانواتو", "en": "Vanuatu" },
+  {
+    "value": "Venezuela (Bolivarian Republic of)",
+    "ar": "فنزويلا (جمهورية فنزويلا البوليفارية)",
+    "en": "Venezuela (Bolivarian Republic of)"
+  },
+  { "value": "Viet Nam", "ar": "فيتنام", "en": "Viet Nam" },
+  {
+    "value": "Western Sahara",
+    "ar": "الصحراء الغربية",
+    "en": "Western Sahara"
+  },
+  { "value": "Yemen", "ar": "اليمن", "en": "Yemen" },
+  { "value": "Zambia", "ar": "زامبيا", "en": "Zambia" },
+  { "value": "Zimbabwe", "ar": "زيمبابوي", "en": "Zimbabwe" }
+]

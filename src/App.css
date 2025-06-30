@@ -8,27 +8,23 @@
 .back-ground .text {
   left: 0 !important;
   position: absolute;
-  right: -4%;
-  top: 38%;
+  right: 0%;
+  bottom: 15%;
   z-index: 20;
 }
 .back-ground .text h3 {
   color: #fff;
-  font-size: 64px;
   font-weight: 700;
-  line-height: 48px;
   margin: 0;
   padding: 0;
-  text-shadow: 0 4px 4px #105be6;
 }
 .back-ground {
-  height: 320px;
   max-width: 100%;
   position: relative;
   z-index: 1;
 }
 .back-ground:before {
-  background-color: #00000094;
+  background-color: #013047d9;
   content: "";
   height: 100%;
   left: 0;
@@ -37,6 +33,16 @@
   width: 100%;
   z-index: 1;
 }
+
+@media (max-width: 768px) {
+  .back-ground .text {
+    text-align: center;
+    position: absolute;
+    bottom: 30%;
+    z-index: 20;
+  }
+}
+
 .about-img {
   height: 100%;
   object-fit: cover;
@@ -45,19 +51,29 @@
 
 .btn-view-home {
   background: #fff;
-  border-radius: 30px;
-  color: #44add2;
-  outline: 1.3px solid #44add2;
-  transition: all 0.3s ease-in-out;
+  border-radius: 15px;
+  color: #013047;
+  padding: 10px 8px;
+  transition: all 0.2s ease-in-out;
+}
+.btn-why-sponsor {
+  background: #013047;
+  border-radius: 15px;
+  color: #fff;
+  padding: 12px;
+  transition: all 0.2s ease-in-out;
+}
+.btn-why-sponsor:hover {
+  outline: #013047 2.5px solid;
 }
 .btn-register-home {
   background: #44add2;
-  border-radius: 30px;
+  border-radius: 10px;
   color: #fff;
   transition: all 0.22s ease-in-out;
 }
 .minister-watermark::before {
-  background-image: url(./Images/ID-المرافق.png);
+  /* background-image: url(./Images/ID-المرافق.png); */
   background-position: 50%;
   background-size: cover;
   content: "";
@@ -72,14 +88,12 @@
 .visit-saudi-company {
   align-items: center;
   background-attachment: fixed;
-  background-image: url("./Images/2024-banner.png");
+  background-image: url("/public/images/banner_bg.webp");
   background-position: 50%;
   background-size: cover;
   color: #fff;
   display: flex;
-  height: 37vh;
   justify-content: center;
-  margin-bottom: 60px;
   text-align: center;
 }
 
@@ -95,10 +109,9 @@
 }
 .visit-saudi-company::before {
   content: "";
-  background-color: #44add2;
+  background-color: #01304789;
   width: 100%;
   height: 100%;
-  opacity: 0.3;
   position: absolute;
   top: 0;
   left: 0;
@@ -114,12 +127,8 @@
 
 .homeSec {
   position: relative;
-  height: calc(100vh - 64px);
+  height: calc(90vh - 64px);
   object-fit: "cover";
-  background-image: url(../src/Images/home.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 @media (max-width: 568px) {
@@ -127,9 +136,212 @@
     position: relative;
     height: 70vh;
     object-fit: "cover";
-    background-image: url(../src/Images/home.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
   }
+}
+
+/* Nav Bar */
+.active {
+  color: #28a4a8;
+}
+.active:before {
+  background-color: #005ea1;
+  bottom: -1.5px;
+  content: "";
+  height: 1.5px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.active_mobile {
+  color: #005ea1;
+  font-weight: 700;
+  position: relative;
+}
+
+.register_banner {
+  background-image: url("/public/images/banner_bg.webp");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 70vh;
+  object-fit: cover;
+  position: relative;
+  z-index: 3;
+}
+.register_banner::before {
+  content: "";
+  position: absolute;
+  background-color: #02304787;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+}
+
+.dont_miss_banner {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  position: relative;
+  z-index: 3;
+}
+.dont_miss_banner::before {
+  content: "";
+  position: absolute;
+  background-color: #02304720;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -5;
+}
+
+@media (max-width: 1024px) {
+  .dont_miss_banner::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -5;
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.flip-card-front {
+  background-size: cover;
+  background-position: center;
+}
+
+.flip-card-back {
+  background-color: #013047;
+  transform: rotateY(180deg);
+}
+
+.sponsor-cards {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Adjust to control number of cards per row */
+  gap: 20px; /* Spacing between cards */
+  padding: 20px;
+}
+
+.card {
+  background-color: rgba(246, 246, 246, 1);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+}
+
+.card-image img {
+  height: 150px; /* Adjust height as needed */
+  object-fit: cover;
+}
+
+.card-footer {
+  background-color: #28a4a8; /* Teal color */
+  color: white;
+  padding: 10px;
+}
+
+.card-footer .card-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.test {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .test {
+    height: fit-content;
+  }
+}
+
+/* fade animation */
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-left {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.fade-right {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.fade-left.animate {
+  animation: fadeInLeft 0.3s ease-in-out forwards;
+}
+
+.fade-right.animate {
+  animation: fadeInRight 0.3s ease-in-out forwards;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

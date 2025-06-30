@@ -4,7 +4,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        main: "#44add2",
+        main: "#28a4a8",
+        text: "#013047",
+        text_hover: "#092939",
+      },
+      container: {
+        center: true,
+        padding: "1rem",
+        screens: {
+          sm: "100%",
+          md: "768px",
+          lg: "1024px",
+          xl: "1280px",
+        },
       },
     },
   },

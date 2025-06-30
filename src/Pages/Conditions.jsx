@@ -1,10 +1,19 @@
 import React from "react";
-import aboutImage from "../Images/aboutImage.png";
 import { useTranslation } from "react-i18next";
-import dateLimit from "../Images/conditions.png";
+import { Helmet } from "react-helmet";
 
 const Conditions = () => {
   const { t, i18n } = useTranslation();
+
+  const topics = [
+    "conference.topic1",
+    "conference.topic2",
+    "conference.topic3",
+    "conference.topic4",
+    "conference.topic5",
+    "conference.topic6",
+    "conference.topic7",
+  ];
 
   return (
     <section
@@ -13,124 +22,121 @@ const Conditions = () => {
       }`}
       dir={i18n.language === "en" ? "ltr" : "rtl"}
     >
-      <div className="lg:col-span-12 col-span-12 back-ground text-center">
+      <Helmet>
+        <title>{t("about.title")}</title>
+      </Helmet>
+      <div className="lg:col-span-12 col-span-12 back-ground h-[65vh] ">
         <img
-          src={aboutImage}
-          className="about-img col-span-12"
-          alt="aboutImage"
+          src="/images/banner_bg.webp"
+          className="about-img col-span-12 h-[500px]"
+          alt={t("about.aboutImageAlt")}
         />
-        <div className="text">
-          <h3
-            className="xl:translate-y-0 lg:translate-y-0 md:translate-y-0 -translate-y-14"
-            style={{ lineHeight: 1.2 }}
-          >
-            {i18n.t("conditions.title")}
+        <div
+          className={`text text-center ${
+            i18n.language === "en" ? "md:text-left" : "md:text-right"
+          }`}
+        >
+          <h3 className="md:text-7xl text-6xl font-bold leading-snug text-center">
+            {t("conditions.title")}
           </h3>
-          <p className="xl:mt-6 lg:mt-6 md:mt-6 -mt-10 text-white">
-            {i18n.t("conditions.powered_by")}
-          </p>
         </div>
       </div>
 
       <div className="col-span-12 px-3">
-        <div className="lg:grid md:grid grid-cols-12 2xl:px-16 xl:px-16 lg:px-16 md:px-8 px-4 mb-10">
+        <div className="lg:grid md:grid grid-cols-12   mb-10">
           <div className="col-span-12 my-auto font-semibold">
-            <p className="text-[#212529] font-bold text-3xl mb-8 mt-8">
-              {i18n.t("conditions.call_for_presentations")}
+            <p className="text-text font-bold text-3xl mb-2 mt-4 text-center">
+              {t("conditions.call_for_presentations")}
             </p>
           </div>
-          <div className="col-span-12 my-auto font-semibold">
-            <p className="text-[#3598db] font-bold text-sm mb-1">
-              {i18n.t("conditions.conference_overview")}
+          <div className="col-span-12 my-auto font-semibold md:px-32 px-4">
+            <p className="text-center font-bold text-xl mb-1 text-main leading-normal">
+              {t("conditions.conference_overview")}
             </p>
-            <p className="text-sm text-[#023047] my-2 leading-loose text-justify">
-              {i18n.t("conditions.conference_description")}
-            </p>
-          </div>
-          <div className="col-span-12 my-auto font-semibold">
-            <p className="text-[#3598db] font-bold text-sm mb-1 mt-6">
-              {i18n.t("conditions.conference_info")}
-            </p>
-            <p className="text-sm text-[#023047] my-2">
-              {i18n.t("conditions.conference_dates")}
-            </p>
-            <p className="text-sm text-[#023047] my-2">
-              {i18n.t("conditions.conference_dates2")}
-            </p>
-            <p className="text-sm text-[#023047]">
-              {i18n.t("conditions.conference_location")}
+            <p className="text-base text-text my-2 leading-loose text-justify ">
+              {t("conditions.conference_description")}
             </p>
           </div>
-          <div className="col-span-12 my-auto">
-            <p className="text-[#023047] font-bold text-sm mb-1 mt-6">
-              {t("conference.topics_title")}:
-            </p>
-            <p className="text-sm text-[#023047] text-justify">
-              1. {t("conference.topic1")}
-            </p>
-            <p className="text-sm text-[#023047] text-justify">
-              2. {t("conference.topic2")}
-            </p>
-            <p className="text-sm text-[#023047] text-justify">
-              3. {t("conference.topic3")}
-            </p>
-            <p className="text-sm text-[#023047] text-justify">
-              4. {t("conference.topic4")}
-            </p>
-            <p className="text-sm text-[#023047] text-justify">
-              5. {t("conference.topic5")}
-            </p>
-            <p className="text-sm text-[#023047] text-justify">
-              6. {t("conference.topic6")}
-            </p>
-            <p className="text-sm text-[#023047] text-justify">
-              7. {t("conference.topic7")}
-            </p>
+          <div className="col-span-12">
+            <img
+              src="/images/date & location.png"
+              alt="date & location"
+              className=" md:h-32 px-4  bottom-0 z-12 mx-auto mt-2 md:mb-10 mb-6 "
+            />
           </div>
-          <div className="col-span-12 my-auto font-semibold">
-            <p className="text-[#3598db] font-bold text-sm mb-1 mt-6 my-2">
-              {t("conditions.invitation")}
+          <div className="col-span-12 my-auto bg-[#EEEEEE] py-4">
+            <p className="text-text font-bold mb-1 mt-6 text-center text-4xl leading-normal">
+              {t("conference.topics_title")}
             </p>
-            <p className="text-sm text-[#023047] leading-loose">
-              {t("conditions.invitation_text")}
-            </p>
-          </div>
-          <div className="col-span-12 my-auto">
-            <p className="text-[#e03e2d] font-bold lg:text-xl md:text-xl mb-1 mt-6 text-center my-2">
-              {i18n.t("conditions.submission_deadline")}
-            </p>
-            <p className="text-sm text-[#023047] font-bold leading-loose text-center">
-              {i18n.t("conditions.acceptance_criteria")}
-            </p>
-            <img src={dateLimit} className="object-cover w-full mt-10 mb-6" />
-          </div>
-          {/* <div className="col-span-12 my-auto font-semibold">
-            <p className="text-[#3598db] font-bold text-sm mb-1 mt-12">
-              {i18n.t("conditions.requirements")}
-            </p>
-            <div className="flex lg:justify-start md:justify-start sm:justify-start justify-center gap-6 mt-4">
-              <button
-                type="submit"
-                className="py-2 px-6 lg:w-fit md:w-fit w-full rounded-md text-white font-bold text-sm"
-                style={{ backgroundColor: "rgb(68, 173, 210)" }}
-              >
-                <a
-                  href="../Images/files/Arabic Call for presentation - International Facility Management Conference and Exhibition 2024.pdf"
-                  download=""
+            <div className="flex flex-wrap gap-4 my-12 container mx-auto justify-center">
+              {topics.map((topic, index) => (
+                <p
+                  key={index}
+                  className="flex-grow-0 lg:basis-[24%] md:basis-1/3 basis-full text-xl font-semibold bg-text text-white text-center py-12 px-3 rounded-2xl h-[170px] max-h-[200px] flex items-center justify-center leading-relaxed"
                 >
-                  {i18n.t("conditions.download_first_file")}
-                </a>
-              </button>
-              <a
-                href="../Images/files/PDF 2 Ar.pdf"
-                download
-                className="py-2 px-6 lg:w-fit md:w-fit w-full rounded-md text-white font-bold text-sm"
-                style={{ backgroundColor: "rgb(68, 173, 210)" }}
-              >
-                {i18n.t("conditions.download_second_file")}
-              </a>
+                  {t(topic)}
+                </p>
+              ))}
             </div>
-          </div> */}
+          </div>
+          <div
+            className={`col-span-12 digital-transformation md:mb-8 mb-4 md:mt-14 md:px-8 px-5 ${
+              i18n.language === "en" ? "text-left" : "text-right"
+            }`}
+            dir={i18n.language === "en" ? "ltr" : "rtl"}
+          >
+            <div className="lg:grid md:grid grid-cols-12 gap-6 ">
+              <div className="lg:col-span-6 md:col-span-6 col-span-12 px-6 md:text-justify text-center md:my-auto my-6">
+                <p className="md:text-4xl text-2xl font-bold">
+                  {t("conditions.invitation")}
+                </p>
+                <p className=" md:text-[18px] text-base mt-2 leading-loose">
+                  {t("conditions.invitation_text")}
+                </p>
+              </div>
+              <div className="lg:col-span-6 md:col-span-6 col-span-12">
+                <img
+                  src="/images/Reason_Participation.png"
+                  className="mx-auto md:h-full h-72 "
+                  alt="minister_image"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-span-12 my-auto">
+            <p className="text-text font-bold mb-1 text-center text-4xl leading-normal">
+              {t("conditions.submission_deadline")}
+            </p>
+            <p className="text-sm text-text font-bold leading-loose text-center md:px-32">
+              {t("conditions.acceptance_criteria")}
+            </p>
+            <div className="flex flex-wrap justify-around items-center my-6 gap-4">
+              <div>
+                <p className="text-xl font-bold bg-main text-white text-center py-12 px-3 rounded-2xl w-[370px] h-[170px] max-h-[200px] flex items-center justify-center leading-10">
+                  {t("conditions.card_1")}
+                </p>
+                <p className="text-text text-center text-2xl font-bold mt-2">
+                  {t("conditions.card_1_date")}
+                </p>
+              </div>
+              <div>
+                <p className="text-xl font-bold bg-main text-white text-center py-12 px-3 rounded-2xl w-[370px] h-[170px] max-h-[200px] flex items-center justify-center leading-10">
+                  {t("conditions.card_2")}
+                </p>
+                <p className="text-text text-center text-2xl font-bold mt-2">
+                  {t("conditions.card_2_date")}
+                </p>
+              </div>
+              <div>
+                <p className="text-xl font-bold bg-main text-white text-center py-12 px-3 rounded-2xl w-[370px] h-[170px] max-h-[200px] flex items-center justify-center leading-10">
+                  {t("conditions.card_3")}
+                </p>
+                <p className="text-text text-center text-2xl font-bold mt-2">
+                  {t("conditions.card_3_date")}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

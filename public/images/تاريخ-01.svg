@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 222.5 193.3" style="enable-background:new 0 0 222.5 193.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_1_);fill:#133146;}
+	.st1{clip-path:url(#SVGID_1_);fill:#FFFFFF;}
+	.st2{clip-path:url(#SVGID_1_);fill:#93D3EA;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_3_" width="222.5" height="193.3"/>
+	</defs>
+	<clipPath id="SVGID_1_">
+		<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+	</clipPath>
+	<path class="st0" d="M4,187c2.6,2.6,6.1,4,9.8,4h1.7h7.4h185.8c3.6,0,7.2-1.5,9.7-4c2.6-2.6,4-6.1,4-9.7V63.1H0v114.1
+		C0,180.8,1.5,184.4,4,187 M177.7,72.4h31.8v28.3h-31.8V72.4z M177.7,108.5h31.8v28.3h-31.8V108.5z M136.5,72.4h31.9v28.3h-31.9
+		V72.4z M136.5,108.5h31.9v28.3h-31.9V108.5z M136.5,144.7h31.9V173h-31.9V144.7z M95.3,72.4h31.9v28.3H95.3V72.4z M95.3,108.5h31.9
+		v28.3H95.3V108.5z M95.3,144.7h31.9V173H95.3V144.7z M54.1,72.4H86v28.3H54.1V72.4z M54.1,108.5H86v28.3H54.1V108.5z M54.1,144.7
+		H86V173H54.1V144.7z M13,108.5h31.8v28.3H13V108.5z M13,144.7h31.8V173H13V144.7z"/>
+	<rect x="0" y="50" class="st0" width="222.5" height="8.2"/>
+	<path class="st0" d="M22.9,10.7h-7.4h-1.7c-3.6,0-7.2,1.5-9.8,4c-2.6,2.6-4,6.1-4,9.7v16h222.5v-16c0-3.6-1.5-7.2-4-9.7
+		c-2.6-2.6-6.1-4-9.8-4h-23.4v18.1c0,3.4-2.7,6.1-6.1,6.1h-12.9c-3.4,0-6.1-2.7-6.1-6.1V10.7H62.3v18.1c0,3.4-2.7,6.1-6.1,6.1H43.3
+		c-3.4,0-6.1-2.7-6.1-6.1V10.7H22.9z"/>
+	<polygon class="st0" points="43.3,28.7 56.2,28.7 56.2,10.7 56.2,-5.2 43.3,-5.2 43.3,10.7 	"/>
+	<polygon class="st0" points="166.3,28.7 179.2,28.7 179.2,10.7 179.2,-5.2 166.3,-5.2 166.3,10.7 	"/>
+	<rect x="54.1" y="72.4" class="st1" width="31.8" height="28.3"/>
+	<rect x="95.3" y="72.4" class="st1" width="31.9" height="28.3"/>
+	<rect x="136.5" y="72.4" class="st1" width="31.9" height="28.3"/>
+	<rect x="177.7" y="72.4" class="st1" width="31.8" height="28.3"/>
+	<rect x="12.9" y="108.5" class="st1" width="31.8" height="28.3"/>
+	<rect x="54.1" y="108.5" class="st2" width="31.8" height="28.3"/>
+	<rect x="95.3" y="108.5" class="st2" width="31.9" height="28.3"/>
+	<rect x="136.5" y="108.5" class="st1" width="31.9" height="28.3"/>
+	<rect x="177.7" y="108.5" class="st1" width="31.8" height="28.3"/>
+	<rect x="12.9" y="144.7" class="st2" width="31.8" height="28.3"/>
+	<rect x="54.1" y="144.7" class="st1" width="31.8" height="28.3"/>
+	<rect x="95.3" y="144.7" class="st2" width="31.9" height="28.3"/>
+	<rect x="136.5" y="144.7" class="st1" width="31.9" height="28.3"/>
+</g>
+</svg>

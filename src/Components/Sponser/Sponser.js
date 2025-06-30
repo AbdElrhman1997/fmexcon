@@ -3,121 +3,155 @@ import "./Sponser.css";
 import { useTranslation } from "react-i18next";
 import Carousel from "../../Components/Carousel/Carousel";
 import axios from "axios";
+import SilverSponsers from "../SilverSponsers";
+import PartnersSponsers from "../PartnersSponsers";
 
 const Sponser = () => {
   const { t, i18n } = useTranslation();
-  const [Sponsors, setSponsors] = useState([]);
+  const [Sponsors, setSponsors] = useState([]); // Initialize state for sponsors
 
-  const get_sponsers_sponsor = async (type) => {
-    await axios
-      .get(`https://admin.fmexcon.com/api/getNewSponsorApi?type=${type}`)
-      .then((res) => {
-        setSponsors((prev) => [...prev, res?.data?.data]);
-      })
-      .catch(() => {});
+  const getSponsors = async (type) => {
+    try {
+      const res = await axios.get(
+        `https://admin.fmexcon.com/api/getNewSponsorApi`
+      );
+      setSponsors(res?.data?.data);
+    } catch (error) {
+      console.error(`Error fetching sponsors for type ${type}:`, error);
+    }
   };
 
   useEffect(() => {
-    for (let index = 0; index < 6; index++) {
-      get_sponsers_sponsor(index + 1);
-    }
-    console.log(Sponsors);
-  }, []);
+    getSponsors();
+  }, []); // Empty dependency array ensures this runs only once
 
   return (
-    <section className="" dir={i18n.language == "en" ? "ltr" : "rtl"}>
-      <p
-        style={{
-          fontWeight: "bold",
-          color: "#44add2",
-        }}
-        className={` mx-16 text-3xl mb-6 ${
-          i18n.language == "en"
-            ? "lg:text-left md:text-left text-center"
-            : "lg:text-right md:text-right text-center"
-        }`}
-      >
-        {t("")}
-      </p>
-      {Sponsors?.map((sponsors, index) => {
-        return (
-          <>
+    <section className="" dir={"rtl"}>
+      {[...Array(8)].map((_, index) => {
+        // Filter sponsors by type based on the current index
+        const filteredSponsors = Sponsors.filter(
+          (sponsor) => sponsor.type === index + 1
+        );
+        return filteredSponsors.length ? (
+          <div key={`sponsor-section-${index}`}>
             <p
-              className={` mx-16 text-3xl mb-6 text-[#44add2] font-bold ${
-                i18n.language == "en"
-                  ? "2xl:text-left xl:text-left lg:text-left md:text-left text-center"
-                  : "2xl:text-right xl:text-right lg:text-right md:text-right text-center"
+              className={`text-text font-bold  mt-10 text-center md:text-4xl text-3xl ${
+                index === 4 || index === 5 ? "md:mb-10 mb-8" : "md:mb-12 mb-8"
               }`}
             >
-              {index == "0"
-                ? t("الراعي الشريك")
-                : index == "1"
-                ? t("الراعي الاستراتيجي")
-                : index == "2"
-                ? t("الراعي الرئيسي")
-                : index == "3"
-                ? t("الراعي الماسي")
-                : index == "4"
-                ? t("الراعي الذهبي")
-                : index == "5"
-                ? t("الراعي الفضي")
+              {index === 0
+                ? t("sponsors.partnerSponsor")
+                : index === 1
+                ? t("sponsors.strategicSponsor")
+                : index === 2
+                ? t("sponsors.mainSponsor")
+                : index === 3
+                ? t("sponsors.diamondSponsor")
+                : index === 4
+                ? t("sponsors.goldSponsor")
+                : index === 5
+                ? t("sponsors.sliverPartners")
+                : index === 6
+                ? t("sponsors.partnersSponser")
+                : index === 7
+                ? t("sponsors.participants")
                 : ""}
             </p>
-            <div>
-              {index == "0" ? (
-                sponsors?.map((sponser) => {
-                  return (
-                    <img
-                      src={`https://admin.fmexcon.com/public/images/${sponser?.image}`}
-                      className=" mx-auto lg:w-96 md:w-80 w-72"
-                      alt="strategy_image"
-                    />
-                  );
-                })
-              ) : index == "1" ? (
-                sponsors?.map((sponser) => {
-                  return (
-                    <img
-                      src={`https://admin.fmexcon.com/public/images/${sponser?.image}`}
-                      className=" mx-auto lg:w-80 md:w-64 w-72"
-                      alt="strategy_image"
-                    />
-                  );
-                })
-              ) : index == "2" ? (
-                sponsors?.map((sponser) => {
-                  return (
-                    <img
-                      src={`https://admin.fmexcon.com/public/images/${sponser?.image}`}
-                      className=" mx-auto lg:w-72 md:w-56 w-48"
-                      alt="minister_image"
-                    />
-                  );
-                })
-              ) : index == "3" ? (
-                sponsors?.map((sponser) => {
-                  return (
-                    <img
-                      src={`https://admin.fmexcon.com/public/images/${sponser?.image}`}
-                      className=" mx-auto lg:col-span-4 md:col-span-6 sm:col-span-6 col-span-12 lg:w-64 md:w-56 w-44"
-                      alt="minister_image"
-                    />
-                  );
-                })
-              ) : index == "4" ? (
-                <div className="mb-16">
-                  <Carousel sponsers={sponsors} />
-                </div>
-              ) : index == "5" ? (
-                <div>
-                  <Carousel sponsers={sponsors} />
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
-          </>
-        );
+            {index === 4 ? (
+              // Carousel for Gold and Silver sponsors
+              <div className="md:mb-12 mb-0">
+                <Carousel sponsers={filteredSponsors} />
+              </div>
+            ) : index === 5 ? (
+              // Carousel for Gold and Silver sponsors
+              <div className="mb-8">
+                <SilverSponsers sponsers={filteredSponsors} />
+              </div>
+            ) : index === 6 ? (
+              // Carousel for Gold and Silver sponsors
+              <div className="mb-8">
+                <PartnersSponsers sponsers={filteredSponsors} />
+              </div>
+            ) : index === 7 ? (
+              // Carousel for Gold and Silver sponsors
+              <div className="mb-8">
+                <PartnersSponsers sponsers={filteredSponsors} />
+              </div>
+            ) : (
+              // Display sponsor cards for other types
+              <div className="md:flex flex-wrap md:flex-row justify-center flex-col md:gap-12 gap-y-12 gap-x-0 md:m-auto m-4">
+                {filteredSponsors.map((sponsor) => (
+                  <div
+                    key={`sponsor-${sponsor.id}`}
+                    className={`card px-8 pt-4 text-white md:my-auto my-8  ${
+                      index == 0
+                        ? "md:w-[42%] w-[100%]"
+                        : index == 1
+                        ? "md:w-[37%] w-[100%]"
+                        : index == 2
+                        ? "md:w-[30%] w-[100%]"
+                        : index == 3
+                        ? "md:w-[24%] w-[100%]"
+                        : "w-fit"
+                    }`}
+                    style={{
+                      borderTop:
+                        index == 0
+                          ? ""
+                          : index == 1
+                          ? "14px solid #13A89E"
+                          : index == 2
+                          ? "14px solid #3F54A5"
+                          : index == 3
+                          ? "14px solid #34C0C4"
+                          : "14px solid red",
+                    }}
+                  >
+                    <div className="card-image md:min-h-[200px] flex items-center justify-center">
+                      <img
+                        src={`https://admin.fmexcon.com/public/images/${sponsor.image}`}
+                        className={` mx-auto ${
+                          index == 0
+                            ? "md:w-80 w-72"
+                            : index == 1
+                            ? "md:w-60 w-72"
+                            : index == 2
+                            ? "md:w-60 w-72"
+                            : index == 3
+                            ? "md:w-52 w-72"
+                            : "w-fit"
+                        }`}
+                        alt="sponsor_image"
+                        style={{ height: "100%" }}
+                      />
+                    </div>
+                    <div className="p-4">
+                      {i18n.language === "en" ? (
+                        <a
+                          href={sponsor.url || "#"}
+                          className="card-link text-xl hover:opacity-70 text-text"
+                          target="_blank"
+                          dir="ltr"
+                        >
+                          Visit Us →
+                        </a>
+                      ) : (
+                        <a
+                          href={sponsor.url || "#"}
+                          className="card-link text-xl hover:opacity-60 text-text"
+                          dir="rtl"
+                          target="_blank"
+                        >
+                          تعرف علينا ←
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ) : null;
       })}
     </section>
   );

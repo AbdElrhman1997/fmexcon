@@ -1,9 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import image1 from "../../Images/sfma.png";
-import image2 from "../../Images/mom.png";
-import image3 from "../../Images/fmTech.png";
-import image4 from "../../Images/sary.png";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { FaXTwitter } from "react-icons/fa6";
@@ -16,12 +12,12 @@ const Footer = () => {
 
   return (
     <footer
-      className="bg-slate-800 py-5 pt-10 footer"
+      className="bg-text py-5 pt-10"
       dir={i18n.language === "en" ? "ltr" : "rtl"}
     >
-      <div className="lg:grid md:grid grid-cols-12 gap-6">
+      <div className="lg:grid md:grid grid-cols-12 gap-6 container mx-auto">
         <div className="lg:col-span-3 md:col-span-6 lg:my-6 md:my-6 my-16">
-          <img src={image4} className="w-32 mx-auto" alt="footerImage" />
+          <img src="/images/sary.png" className="w-32 mx-auto" alt="footerImage" />
           <p className="text-white font-semibold my-6 px-3 text-justify">
             {t("footer.description")}
           </p>
@@ -100,10 +96,33 @@ const Footer = () => {
               <FaInstagram />
             </a>
           </div>
+          {/* <div className="flex justify-center gap-10 mt-10">
+            <div className="w-12 bg-[#007BB8] rounded-full flex justify-center items-center p-2">
+              <a
+                href="https://www.linkedin.com/in/%D8%A7%D9%84%D9%85%D9%84%D8%AA%D9%82%D9%89-%D9%88%D8%A7%D9%84%D9%85%D8%B9%D8%B1%D8%B6-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A-%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D9%81%D9%82-sfma-expo-793226320"
+                target="_blank"
+              >
+                <FaLinkedinIn className="w-12 text-3xl text-white" />
+              </a>
+            </div>
+            <div>
+              <a
+                href="https://www.instagram.com/sfma_expo/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
+                target="_blank"
+              >
+                <img src="/images/insta.png" className="w-12" />
+              </a>
+            </div>
+            <div>
+              <a href="https://x.com/Sfma_Expo" target="_blank">
+                <img src="/images/x.png" className="w-12" />
+              </a>
+            </div>
+          </div> */}
         </div>
 
         <div className="lg:col-span-3 md:col-span-6 lg:my-6 md:my-6 my-16">
-          <img src={image1} className="footerImg mx-auto" alt="footerImage" />
+          <img src="/images/sfma_2.png" className="footerImg mx-auto" alt="footerImage" />
           {/* <img
             src={image2}
             className="footerImg mx-auto my-5"

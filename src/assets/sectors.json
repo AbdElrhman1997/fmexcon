@@ -1,0 +1,122 @@
+[
+  {
+    "value": "Facilities Management",
+    "ar": "إدارة المرافق",
+    "en": "Facilities Management"
+  },
+  { "value": "Industrial", "ar": "صناعى", "en": "Industrial" },
+  { "value": "Commercial", "ar": "تجارى", "en": "Commercial" },
+  { "value": "Agricultural", "ar": "زراعى", "en": "Agricultural" },
+  {
+    "value": "Facility management",
+    "ar": "إدارة المنشآت",
+    "en": "Facility management"
+  },
+  { "value": "Manufacturing", "ar": "تصنيع", "en": "Manufacturing" },
+  { "value": "Management", "ar": "إدارة", "en": "Management" },
+  { "value": "Health care", "ar": "رعاية صحية", "en": "Health care" },
+  {
+    "value": "Tertiary sector of the economy",
+    "ar": "القطاع الثالث من الاقتصاد",
+    "en": "Tertiary sector of the economy"
+  },
+  { "value": "Agriculture", "ar": "زراعة", "en": "Agriculture" },
+  { "value": "Finance", "ar": "تمويل", "en": "Finance" },
+  { "value": "Technology", "ar": "تكنولوجيا", "en": "Technology" },
+  {
+    "value": "Secondary sector of the economy",
+    "ar": "القطاع الثانوي من الاقتصاد",
+    "en": "Secondary sector of the economy"
+  },
+  { "value": "Energy", "ar": "طاقة", "en": "Energy" },
+  {
+    "value": "Financial services",
+    "ar": "الخدمات المالية",
+    "en": "Financial services"
+  },
+  { "value": "Production", "ar": "إنتاج", "en": "Production" },
+  { "value": "Industry", "ar": "صناعة", "en": "Industry" },
+  { "value": "Construction", "ar": "بناء", "en": "Construction" },
+  { "value": "Advertising", "ar": "إعلان", "en": "Advertising" },
+  { "value": "Retail", "ar": "تجزئة", "en": "Retail" },
+  { "value": "Food industry", "ar": "صناعة الأغذية", "en": "Food industry" },
+  { "value": "Marketing", "ar": "تسويق", "en": "Marketing" },
+  { "value": "Mining", "ar": "تعدين", "en": "Mining" },
+  { "value": "Infrastructure", "ar": "بنية تحتية", "en": "Infrastructure" },
+  { "value": "Transport", "ar": "نقل", "en": "Transport" },
+  { "value": "Education", "ar": "تعليم", "en": "Education" },
+  { "value": "Trade", "ar": "تجارة", "en": "Trade" },
+  { "value": "Foodservice", "ar": "خدمات الطعام", "en": "Foodservice" },
+  { "value": "Investment", "ar": "استثمار", "en": "Investment" },
+  { "value": "Entertainment", "ar": "ترفيه", "en": "Entertainment" },
+  { "value": "Economics", "ar": "اقتصاد", "en": "Economics" },
+  {
+    "value": "Information and Communications Technology",
+    "ar": "تكنولوجيا المعلومات والاتصالات",
+    "en": "Information and Communications Technology"
+  },
+  {
+    "value": "Hospitality industry",
+    "ar": "صناعة الضيافة",
+    "en": "Hospitality industry"
+  },
+  { "value": "Distribution", "ar": "توزيع", "en": "Distribution" },
+  { "value": "Forestry", "ar": "حراجة", "en": "Forestry" },
+  {
+    "value": "Telecommunications",
+    "ar": "الاتصالات",
+    "en": "Telecommunications"
+  },
+  { "value": "Small Industry", "ar": "صناعة صغيرة", "en": "Small Industry" },
+  { "value": "Sales", "ar": "مبيعات", "en": "Sales" },
+  {
+    "value": "Industrial sector",
+    "ar": "القطاع الصناعي",
+    "en": "Industrial sector"
+  },
+  {
+    "value": "Quaternary sector of the economy",
+    "ar": "القطاع الرابع من الاقتصاد",
+    "en": "Quaternary sector of the economy"
+  },
+  {
+    "value": "Human Resources",
+    "ar": "الموارد البشرية",
+    "en": "Human Resources"
+  },
+  { "value": "Engineering", "ar": "هندسة", "en": "Engineering" },
+  { "value": "Health", "ar": "صحة", "en": "Health" },
+  { "value": "Commerce", "ar": "تجارة", "en": "Commerce" },
+  {
+    "value": "Renewable energy",
+    "ar": "الطاقة المتجددة",
+    "en": "Renewable energy"
+  },
+  { "value": "Hospitality", "ar": "الضيافة", "en": "Hospitality" },
+  { "value": "Aerospace", "ar": "فضاء جوي", "en": "Aerospace" },
+  { "value": "Logistics", "ar": "الخدمات اللوجستية", "en": "Logistics" },
+  { "value": "Fishery", "ar": "مصائد الأسماك", "en": "Fishery" },
+  {
+    "value": "Building material",
+    "ar": "مواد البناء",
+    "en": "Building material"
+  },
+  {
+    "value": "Computers and information technology",
+    "ar": "الحواسيب وتكنولوجيا المعلومات",
+    "en": "Computers and information technology"
+  },
+  { "value": "Law", "ar": "قانون", "en": "Law" },
+  { "value": "Startup company", "ar": "شركة ناشئة", "en": "Startup company" },
+  {
+    "value": "Aerospace Engineering",
+    "ar": "هندسة الفضاء الجوي",
+    "en": "Aerospace Engineering"
+  },
+  { "value": "Computer", "ar": "حاسوب", "en": "Computer" },
+  {
+    "value": "Customer relationship management",
+    "ar": "إدارة علاقات العملاء",
+    "en": "Customer relationship management"
+  }
+]
