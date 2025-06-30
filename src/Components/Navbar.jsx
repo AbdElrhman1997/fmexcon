@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const dropdownButtonRef = useRef(null);
+  const location = useLocation(); // To track URL changes
 
   const langPrefix = i18n.language === "en" ? "/en" : "/ar";
 
@@ -15,7 +17,10 @@ const Navbar = () => {
     { to: "/about", label: "navbar.about" },
     {
       label: "navbar.conference",
-      subMenu: [{ to: "/speackers", label: "navbar.speakers" }],
+      subMenu: [
+        { to: "/conferance", label: "navbar.conference" },
+        { to: "/speackers", label: "navbar.speakers" },
+      ],
     },
     { to: "/sponsores", label: "navbar.sponsors" },
     { to: "/register", label: "navbar.register" },
@@ -45,6 +50,28 @@ const Navbar = () => {
   const toggleDropdown = (key) =>
     setActiveDropdown((prev) => (prev === key ? null : key));
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      console.log(dropdownButtonRef);
+      if (
+        dropdownButtonRef.current &&
+        !dropdownButtonRef.current.contains(event.target) &&
+        !dropdownButtonRef.current.nextSibling.contains(event.target)
+      ) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    setActiveDropdown(null);
+  }, [location.pathname]);
+
   const renderNavLinksDesktop = () =>
     navLinksLG.map(({ to, label, subMenu }) => {
       const currentPath = window.location.pathname;
@@ -61,13 +88,14 @@ const Navbar = () => {
             <button
               type="button"
               onClick={() => toggleDropdown(label)}
-              className={`flex  items-center gap-1 py-2 text-sm font-bold rounded-md transition  `}
+              ref={dropdownButtonRef}
+              className={`flex items-center gap-1 py-2 text-sm font-bold rounded-md transition`}
             >
               {t(label)}
               {isOpen ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
             </button>
             <div
-              className={`absolute top-full mt-2 right-0 bg-white rounded-md shadow-lg border border-gray-200 min-w-[160px] z-50 transition-all duration-300 origin-top transform ${
+              className={`group absolute top-full mt-2 right-0 bg-white rounded-md shadow-lg border border-gray-200 min-w-[160px] z-50 transition-all duration-300 origin-top transform ${
                 isOpen
                   ? "scale-100 opacity-100"
                   : "scale-95 opacity-0 pointer-events-none"
@@ -79,11 +107,10 @@ const Navbar = () => {
                   key={item.to}
                   to={`${langPrefix}${item.to}`}
                   className={({ isActive }) =>
-                    `block px-4 py-2 text-sm  font-semibold transition hover:bg-gray-100 hover:text-primary ${
+                    `block px-4 py-2 text-sm font-semibold transition hover:bg-gray-100 hover:text-primary ${
                       isActive ? "text-[#44add2]" : "text-gray-700"
                     }`
                   }
-                  onClick={() => setActiveDropdown(null)}
                 >
                   {t(item.label)}
                 </NavLink>
@@ -99,7 +126,7 @@ const Navbar = () => {
           to={`${langPrefix}${to}`}
           end={to === "/home"}
           className={({ isActive }) =>
-            `text-sm font-bold hover:text-primary transition  ${
+            `text-sm font-bold hover:text-primary transition ${
               isActive ? "text-[#44add2]" : ""
             }`
           }

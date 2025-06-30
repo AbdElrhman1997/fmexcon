@@ -34,7 +34,7 @@ const Organizations = () => {
   return (
     <section className="category container lg:mb-12 mb-6" dir="rtl">
       <p
-        className={`text-text font-bold  lg:mt-10 mt-4 text-center md:text-4xl text-3xl mb-8 leading-10`}
+        className={`text-text font-bold  lg:mt-10 mt-4 text-center md:text-4xl text-3xl mb-2 leading-10`}
       >
         {t("sponsors.organizations")}
       </p>
@@ -83,7 +83,7 @@ const Organizations = () => {
                 >
                   <img
                     src={`https://admin.fmexcon.com/public/images/${slide?.image}`}
-                    className="swiper-img md:w-36 w-32 mx-auto"
+                    className="swiper-img md:w-72 w-52 mx-auto"
                     alt={`image ${slide?.name}`}
                   />
                 </a>
