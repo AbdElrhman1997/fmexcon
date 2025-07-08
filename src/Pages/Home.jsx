@@ -20,6 +20,7 @@ import FlipCards from "../Components/FlipCards";
 import VideoSection from "../Components/VideoSection";
 import Organizations from "../Components/Organizations";
 import Speackers from "../Components/Speackers";
+import Ministry_Of_Tourism_2 from "../Components/Ministry_Of_Tourism_2";
 
 const Home = () => {
   const { i18n, t } = useTranslation();
@@ -38,6 +39,7 @@ const Home = () => {
         <DigitalTransformation />
         <CoOperation />
         <Creativity />
+        <Ministry_Of_Tourism_2 />
         <Organizations />
         <RegisterBanner />
         <FlipCards />

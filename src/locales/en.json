@@ -91,6 +91,7 @@
   "tourism": {
     "ministry": {
       "title": "Conference Activities 2024 Edition",
+      "second_title": "Explore Riyadh",
       "visitSite": "Visit the Site"
     }
   },
@@ -109,7 +110,7 @@
     "sliverPartners": "Silver Sponsor",
     "partnersSponser": "Support Partners",
     "participants": "Participants",
-    "organizations": "Government agencies and organizations"
+    "organizations": "Government Entities &Organizations"
   },
   "sponserMinister": {
     "underPatronage": "Under the Patronage of",

@@ -34,7 +34,7 @@ const Organizations = () => {
   return (
     <section className="category container lg:mb-12 mb-6" dir="rtl">
       <p
-        className={`text-text font-bold  lg:mt-10 mt-4 text-center md:text-4xl text-3xl mb-2 leading-10`}
+        className={`text-text font-bold  md:mt-10 mt-4 text-center md:text-4xl text-3xl mb-2 leading-10`}
       >
         {t("sponsors.organizations")}
       </p>
