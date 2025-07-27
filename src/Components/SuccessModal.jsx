@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-const SuccessModal = ({ tog_modal, successModal, fromGetUpdates }) => {
+const SuccessModal = ({ tog_modal, successModal, fromGetUpdates, uuid }) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -39,19 +39,29 @@ const SuccessModal = ({ tog_modal, successModal, fromGetUpdates }) => {
             <h2 className="text-3xl font-bold mb-4 text-white pt-2">
               {t("common.success_login")}
             </h2>
-            <p className="text-xl text-white mt-2">
+            {/* <p className="text-xl text-white mt-2">
               {t("common.send_attend_data")}
             </p>
             <p className="text-xl mb-6 text-white mt-1">
               {t("common.on_email")}
-            </p>
+            </p> */}
             <form>
+              <div className="flex justify-end">
+                <a
+                  href={`https://admin.fmexcon.com/ar/getBadge/${uuid}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-12 py-[6px] bg-main lg:min-w-[320px] min-w-[270px] text-white hover:opacity-90 mb-4 mt-5 hover:text-white text-lg rounded-xl font-bold mx-auto flex justify-center items-center"
+                >
+                  <span className="mx-2">{t("common.get_your_badge")}</span>
+                </a>
+              </div>
               <div className="flex justify-end">
                 <a
                   href="https://admin.fmexcon.com/api/share-with-linkedin"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-12 py-[6px] bg-[#0077B5] text-white hover:bg-[#005582] hover:text-white text-lg rounded-xl font-bold mx-auto flex justify-center items-center"
+                  className="px-12 py-[6px] bg-[#0077B5]  lg:min-w-[320px] min-w-[270px] text-white hover:bg-[#005582] hover:text-white text-lg rounded-xl font-bold mx-auto flex justify-center items-center"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -22,6 +22,7 @@ const RegistrationForm = ({ isVisitor, isSpeaker, isExhibitor }) => {
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
   const [selectedSector, setSelectedSector] = useState("");
+  const [uuid, setUUID] = useState("");
 
   const [isChecked, setIsChecked] = useState(false);
 
@@ -108,7 +109,7 @@ const RegistrationForm = ({ isVisitor, isSpeaker, isExhibitor }) => {
           // إزالة أي شيء غير رقمي
           const digits = value.replace(/\D/g, "");
           // لازم يبدأ بـ 966
-          if (!digits.startsWith("966")) return false;
+          // if (!digits.startsWith("966")) return false;
           // عدد الأرقام بعد 966 لازم يكون 9 أو أكثر
           const localNumber = digits.slice(3); // بعد أول 3 أرقام (كود الدولة)
           return localNumber.length >= 9;
@@ -137,10 +138,12 @@ const RegistrationForm = ({ isVisitor, isSpeaker, isExhibitor }) => {
         sector: selectedSector?.label,
       })
       .then((res) => {
+        console.log(res);
         if (isSpeaker) {
           nav(`/${i18n.language}/conditions`);
         } else {
           if (res.status === 200) {
+            setUUID(res?.data?.data?.uuid);
             setSuccessModal(true);
             resetForm();
           } else {
@@ -192,7 +195,11 @@ const RegistrationForm = ({ isVisitor, isSpeaker, isExhibitor }) => {
       }`}
       dir={i18n.language === "en" ? "ltr" : "rtl"}
     >
-      <SuccessModal tog_modal={tog_modal} successModal={successModal} />
+      <SuccessModal
+        tog_modal={tog_modal}
+        successModal={successModal}
+        uuid={uuid}
+      />
       <FailedModal
         tog_failed_modal={tog_failed_modal}
         failedModal={failedModal}
